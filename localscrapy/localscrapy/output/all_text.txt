@@ -1,0 +1,572 @@
+Upcoming Events | NewCanaanite.com
+Upcoming Events – NewCanaanite.com
+function whichHeader() {
+				var screenWidth = document.documentElement.clientWidth,
+				header_img;
+				if (screenWidth <= 767) {
+					header_img = 'https://newcanaanite.com/wp-content/uploads/2014/02/newcanaanite-32.png';
+				} else if (screenWidth > 767 && screenWidth <= 979) {
+					header_img = 'https://newcanaanite.com/wp-content/uploads/2014/02/newcanaanite-4.png';
+				} else {
+					header_img = 'https://newcanaanite.com/wp-content/uploads/2014/02/Screen-Shot-2017-09-06-at-3.44.24-PM.png';
+				}
+				return header_img;
+			}
+			var banner_img_src = whichHeader();
+window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+
+	gtag('js', new Date());
+	gtag('config', 'G-F7L4HT1FSB');
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/newcanaanite.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=b29db0ec1dd9f898604a0cd50a9c57d3"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55358,56760,9792,65039],[55358,56760,8203,9792,65039])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+/* <![CDATA[ */
+var tribe_js_config = {"permalink_settings":"\/%postname%-%post_id%","events_post_type":"tribe_events","events_base":"https:\/\/newcanaanite.com\/new-canaan-events\/","debug":""};
+var tribe_js_config = {"permalink_settings":"\/%postname%-%post_id%","events_post_type":"tribe_events","events_base":"https:\/\/newcanaanite.com\/new-canaan-events\/","debug":""};
+/* ]]> */
+/* <![CDATA[ */
+var TribeEventsPro = {"geocenter":{"max_lat":41.603220999999998,"max_lng":-72.924104999999997,"min_lat":-12.047046999999999,"min_lng":-122.416246},"map_tooltip_event":"Event: ","map_tooltip_address":"Address: "};
+var TribeEventsPro = {"geocenter":{"max_lat":41.603220999999998,"max_lng":-72.924104999999997,"min_lat":-12.047046999999999,"min_lng":-122.416246},"map_tooltip_event":"Event: ","map_tooltip_address":"Address: "};
+/* ]]> */
+/* <![CDATA[ */
+var tribe_dynamic_help_text = {"date_with_year":"l, F, j, Y","date_no_year":"F j","datepicker_format":"n\/j\/Y","datepicker_format_index":"1","days":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"daysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"msgs":"[\"This event is from %%starttime%% to %%endtime%% on %%startdatewithyear%%.\",\"This event is at %%starttime%% on %%startdatewithyear%%.\",\"This event is all day on %%startdatewithyear%%.\",\"This event starts at %%starttime%% on %%startdatenoyear%% and ends at %%endtime%% on %%enddatewithyear%%\",\"This event starts at %%starttime%% on %%startdatenoyear%% and ends on %%enddatewithyear%%\",\"This event is all day starting on %%startdatenoyear%% and ending on %%enddatewithyear%%.\"]"};
+/* ]]> */
+/* <![CDATA[ */
+var bwg_objectsL10n = {"bwg_select_tag":"Select Tag."};
+/* ]]> */
+/* <![CDATA[ */
+var bwg_objectL10n = {"bwg_field_required":"field is required.","bwg_mail_validation":"This is not a valid email address.","bwg_search_result":"There are no images matching your search."};
+/* ]]> */
+.navis-slideshow  {width: 94%;} .navis-slideshow .slides_container div {width: 100%;}
+/* <![CDATA[ */ jQuery.post("https://newcanaanite.com/wp-admin/admin-ajax.php", { action: "wmp_update", id: 129627, token: "066c8d5ea7" }); /* ]]> */
+document.documentElement.className += " js";
+Skip to content
+About Us
+Our Team
+In the News
+Contact
+Newsletter Sign-Up
+Advertising
+Testimonials
+GO
+Go
+NewCanaanite.com
+NewCanaanite.com
+News
+Around Town
+Government
+Public Safety
+Schools
+Opinion
+The Grazing Ram
+Obituaries
+Sports
+Real Estate
+Business
+Our Animals
+Now & Then
+Podcasts
+Events
+Add Event
+Who Knew?
+Global Navigation
+About Us
+Our Team
+In the News
+Contact
+Newsletter Sign-Up
+Advertising
+Testimonials
+NewCanaanite.com
+- Big news for a small town: New Canaan, CT.
+NewCanaanite.com
+(https://newcanaanite.com/upcoming-events)
+News
+Around Town
+Government
+Public Safety
+Schools
+Opinion
+The Grazing Ram
+Obituaries
+Sports
+Real Estate
+Business
+Our Animals
+Now & Then
+Podcasts
+Events
+Add Event
+Who Knew?
+Upcoming Events
+Upcoming Events
+Events Search and Views Navigation
+Find Events
+Event Views Navigation
+View As
+List
+Month
+Week
+Day
+Map
+Photo
+Events Search
+Events From
+Search
+«
+Previous Events
+Next Events
+»
+February 2025
+Lunch & Learn: Clothing Historian Charlotte Engel Ellis
+February 18 @ 12:00 pm
+-
+1:00 pm
+New Canaan Museum & Historical Society
+,
+13 Oenoke Ridge
+New Canaan
+,
+CT
+06840
+United States
+Free – $10
+This month we feature NCM&HS Charlotte Engel Ellis as she presents: Threads of Time -Unraveling my Journey as a Clothing Historian. Bring your brown bag lunch, soup or snack and join us at the Museum in the Lindstrom Room for our monthly Lunch & Learn program. Charlotte, who is the Manager of the Museum's 6000+ piece collection of clothing and textiles, will discuss her work at the Museum, several exhibitions she has curated, collections management and the restoration process, and…
+Find out more »
+Film Screening: ‘Black Panther’ Directed by Ryan Coogler
+February 19 @ 5:00 pm
+-
+8:00 pm
+New Canaan Library
+,
+151 Main Street
+New Canaan
+,
+CT
+06840
+United States
+Free
+Superhero blockbuster film based on Marvel Comics' Black Panther, heir to the kingdom of Wakanda who must lead his people into a new future and confront a challenger from his country's past. Rated PG-13.
+Find out more »
+HAYVN’s Entreprenurial Womens Collective lunch: Supercharge Your Social Media
+February 20 @ 12:00 pm
+-
+1:30 pm
+HAYVN
+,
+320 Boston Post Rd
+Darien
+,
+CT
+06820
+$25 – $50
+hursday, February 20 · 12 - 1:30pm EST Location HAYVN 320 Boston Post Road Suite 180 Darien, CT 06820 Show map Refund Policy No Refunds About this event Entrepreneurial Women’s Collective (EWC) Luncheon In-Person Event Connect with smart, supportive entrepreneurial women, learn new things, build relationships, and have fun. Please join us for this exciting luncheon event. Admission includes lunch. HAYVN Members: $25 Early Bird (registered one week prior to event) HAYVN Members: $35 (one week leading up to event)…
+Find out more »
+Men’s Club sets classical musical performance for Friday; Invites public
+February 21 @ 10:30 am
+-
+11:30 am
+St. Mark’s Episcopal Church
+,
+111 Oenoke Ridge Road
+New Canaan,
+,
+CT
+06840
+United States
+The New Canaan Men’s Club will have a notable change from its regular programming at its meeting February 21 when it hosts Jonathan Yates, musical director and conductor of the Norwalk Symphony, and Marina Kitaychik, a violinist with the symphony and music educator, for a performance and remarks about the orchestra, now in its 80th year. Because of Friday’s unique program, the club is welcoming spouses and outside guests to enjoy the performance in St. Mark’s Episcopal Church, 111 Oenoke…
+Find out more »
+American and International Contemporary Organ Music Concert
+February 21 @ 7:00 pm
+-
+8:30 pm
+St. Michael’s Lutheran Church
+,
+5 Oenoke Ridge
+New Canaan
+,
+CT
+06840
+United States
++ Google Map
+Free
+Carson Cooman, Organist and Composer in Residence at the Memorial Church of Harvard University, will present a special program of American and international contemporary organ music at St. Michael’s Lutheran Church in New Canaan, Connecticut, on February 21 at 7 pm.  Carson Cooman, Organist and Composer in Residence at Harvard University Chapel, will present a special program of bold, boundary-pushing contemporary organ music on Friday, February 21, 2025 at 7pm  at the historic building of St. Michael’s Lutheran Church, 5…
+Find out more »
+‘Terra Nova’ by Ted Tally
+February 21 @ 7:30 pm
+-
+9:30 pm
+|
+Recurring Event
+(See all)
+An event every week that begins at 7:30pm on Friday and Saturday, repeating indefinitely
+An event every week that begins at 2:00pm on Sunday, repeating indefinitely
+Powerhouse Theatre in Waveny Park
+,
+in Waveny Park
+New Canaan
+,
+06840
+United States
+$25 – $35
+In the winter of 1911-12, five Englishmen and five Norwegians raced each other to the bottom of the Earth. Only the Norwegians returned. Terra Nova is the true story of Captain Scott's expedition to the South Pole. The discovery that Amundsen has preceded him, the bravery and sufferings of his team, the self-sacrifice of Captain Oates and the final tragedy, are recounted in a mixture of fantasy and realism which underlines both the human and the epic qualities of the…
+Find out more »
+WNG Monthly Networking Meeting
+February 26 @ 12:30 pm
+-
+1:30 pm
+Zoom
+$50.00
+Topic: Reclaiming Creativity: A Blueprint for Women Ready to Rediscover Their Passion 📅 Date: February 26, 2025 ⏰ Time: 12:30 PM – 1:30 PM EST 📍 Location: Zoom (provided upon registration) About the Event: In a fast-paced, productivity-driven world, it’s easy to lose touch with the unique parts of ourselves that bring joy, fulfillment, and creativity. If you’re ready to reconnect with your passions and stand out in a crowded world, this workshop is for you! Join Erica Tamburo, author…
+Find out more »
+Soul•Fête: A Celebration of Elevated Black Cuisine and Culture
+February 26 @ 6:00 pm
+-
+9:30 pm
+Carriage Barn Art Center
+,
+Waveny Park
+New Canaan
+,
+CT
+06840
+United States
+$162
+Stand Together Against Racism (S.T.A.R.) is thrilled to announce the return of Soul•Fête: A Culinary Immersion, an exciting event to honor Black Excellence Month through the artistry of food and music. Back for its second edition, this year’s celebration will take place on February 26th from 6:00 PM to 9:30 PM, offering attendees an opportunity to further explore the profound influence of Black cuisine on American food culture. Soul•Fête invites guests to go beyond traditional soul food and experience the…
+Find out more »
+Preventing Cardiovascular Disease with Stamford Health
+February 26 @ 6:30 pm
+-
+7:30 pm
+New Canaan Library
+,
+151 Main Street
+New Canaan
+,
+CT
+06840
+United States
+Free
+This presentation will cover various practical strategies to prevent cardiovascular disease and will include a broad discussion of diet/nutrition, exercise, and medications that could be used. This will also include a discussion about what factors influence a patient’s risk of cardiovascular disease.
+Find out more »
+Madness with Best-Selling Author Antonia Hylton in conversation with Heather Cabot
+February 27 @ 7:00 pm
+-
+8:00 pm
+New Canaan Library
+,
+151 Main Street
+New Canaan
+,
+CT
+06840
+United States
+Free
+Widely listed as one of the best books of 2024, Madness tells the 93-year-old history of Crownsville Hospital, one of the last segregated asylums with surviving records and a campus that still stands in Anne Arundel County, Maryland. Award-winning journalist Antonia Hylton traces the legacy of slavery to the treatment of Black people’s bodies and minds in our current mental healthcare system. Hylton will be in conversation with former ABC News Correspondent and Anchor Heather Cabot.
+Find out more »
+«
+Previous Events
+Next Events
+»
++ Export Events
+Most Popular
+Police: Stolen Bulldog ‘Poppy’ Safely Returned to New Canaan Family
+Did You Hear … ?
+Selectmen Approve $20,000 for More ‘Bumpout’ Curbing on Elm Street
+‘A Family-Friendly, Community-Oriented Business’: Carpet Trends Is Coming to Main Street
+New Canaan High School Q2 Honors, High Honors
+#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+Subscribe to our daily newsletter
+*
+indicates required
+Email Address
+*
+(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);
+Events
+«
+February 2025
+»
+S
+M
+T
+W
+T
+F
+S
+26
+27
+28
+29
+30
+31
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+1
+[{"@context":"http://schema.org","@type":"Event","name":"New Canaan YMCA Group Exercise Party","description":"&lt;p&gt;Drop by and enjoy free group exercise classes all weekend long! Open to the entire community, no registration is needed. *Open ages 14+. Ages 10-13 may attend classes with an adult (excluding Group Power and must meet height requirements for cycling classes). Plus, enjoy: \u2022 Protein smoothie samples from Dante\\'s Caf\u00e9 \u2022 Raffle tickets for [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/new-canaan-ymca-group-exercise-party/","startDate":"2025-01-25T07:45:00-05:00","endDate":"2025-01-26T15:30:00-05:00","location":{"@type":"Place","name":"New Canaan YMCA","description":"","url":"https://newcanaanite.com/venue/new-canaan-ymca-11","address":{"@type":"PostalAddress","streetAddress":"564 South Avenue","addressLocality":"New Canaan","addressRegion":"CT"},"telephone":"","sameAs":""},"organizer":{"@type":"Person","name":"New Canaan YMCA","description":"","url":"https://newcanaanite.com/organizer/new-canaan-ymca-2","telephone":"203 9664528","email":"ag&#111;e&#98;&#101;l&#64;&#115;&#104;ip&#109;ds&#46;&#111;rg","sameAs":"http://newcanaanymca.org"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/new-canaan-ymca-group-exercise-party/"}},{"@context":"http://schema.org","@type":"Event","name":"Staying Put\u2019s 17th Birthday Party","description":"&lt;p&gt;Staying Put is holding its 17th Birthday Party on Sunday, January 26, from 2pm to 4pm at St. Mark\\'s Morrill Hall. Open to members and friends of Staying Put. To rsvp call 203-966-7762.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/staying-puts-17th-birthday-party/","startDate":"2025-01-26T14:00:00-05:00","endDate":"2025-01-26T16:00:00-05:00","offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/staying-puts-17th-birthday-party/"}},{"@context":"http://schema.org","@type":"Event","name":"Public Forum on Community Health &amp; Well-Being Survey Results","description":"&lt;p&gt;Join us on Monday, January 27th, from 6:30 to 8:00 PM at the New Canaan Library, Bartlett Auditorium for a special public forum hosted by the New Canaan Behavioral Health Alliance (NCBHA). Be among the first to hear the results of the Community Health &amp; Well-Being Survey administered last October, which gathered insights from over [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/public-forum-on-community-health-well-being-survey-results/","startDate":"2025-01-27T18:30:00-05:00","endDate":"2025-01-27T20:00:00-05:00","offers":{"@type":"Offer","price":"o","url":"https://newcanaanite.com/new-canaan-event/public-forum-on-community-health-well-being-survey-results/"}},{"@context":"http://schema.org","@type":"Event","name":"Step Into Your Power: Transform with Breathwork &amp; Salt Therapy","description":"&lt;p&gt;Women\\'s Networking Group invites you a Special Event! This is your moment to awaken the power within, surrounded by the soothing environment of the Salt Cave of Darien\u2014a space renowned for its health and wellness benefits. Join certified breathwork facilitator Jenn Warwick for a transformative experience designed to align your mind, body, and spirit. This [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/01/thumbnail_Screenshot-2025-01-20-at-7.36.35\u202fPM.png","url":"https://newcanaanite.com/new-canaan-event/step-into-your-power-transform-with-breathwork-salt-therapy/","startDate":"2025-01-28T18:15:00-05:00","endDate":"2025-01-28T19:30:00-05:00","location":{"@type":"Place","name":"Salt Cave of Darien","description":"","url":"https://newcanaanite.com/venue/salt-cave-of-darien","address":{"@type":"PostalAddress","streetAddress":"555 Post Road","addressLocality":"Darien","addressRegion":"CT","postalCode":"06820","addressCountry":"United States"},"telephone":"","sameAs":"https://saltcaveofdarien.com/"},"organizer":{"@type":"Person","name":"Women&#8217;s Networking Group of Fairfield County","description":"","url":"https://newcanaanite.com/organizer/womens-networking-group-of-fairfield-county-4","telephone":"","email":"&#104;e&#108;&#108;&#111;&#64;&#119;&#110;&#103;&#99;&#116;.&#99;om","sameAs":"http://www.wngct.com"},"offers":{"@type":"Offer","price":"72","url":"https://newcanaanite.com/new-canaan-event/step-into-your-power-transform-with-breathwork-salt-therapy/"}},{"@context":"http://schema.org","@type":"Event","name":"Finding Your Voice as a Parent Webinar: Demystifying Dyslexia","description":"&lt;p&gt;Finding Your Voice as a Parent Webinar Demystifying Dyslexia A Learning Difference that Makes Reading a Struggle Date: Tuesday January 28th 2025 7:00 p.m.-8:30 p.m. EST Zoom registration link: https://bit.ly/7E341A Co-hosted online with the Stamford JCC (Stamford, CT). Speakers: Attorney Lawrence Berliner, Connecticut Special Education Law Jane Faherty, Stamford JCC JumpStart Program Executive Director &amp; [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/finding-your-voice-as-a-parent-webinar-demystifying-dyslexia/","startDate":"2025-01-28T19:00:00-05:00","endDate":"2025-01-28T20:30:00-05:00","location":{"@type":"Place","name":"Zoom webinar (online)","description":"","url":"https://newcanaanite.com/venue/zoom-webinar-online-7","address":{"@type":"PostalAddress"},"telephone":"","sameAs":""},"organizer":{"@type":"Person","name":"Stamford JCC","description":"","url":"https://newcanaanite.com/organizer/stamford-jcc-14","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/finding-your-voice-as-a-parent-webinar-demystifying-dyslexia/"}},{"@context":"http://schema.org","@type":"Event","name":"New Canaan Chamber Music \u201cAmericans in Paris\u201d Concert","description":"&lt;p&gt;New Canaan Chamber Music Audiences are in for an exciting February surprise! They can again \u201cAnticipate the Unexpected\u201d when, for the first time, the program will include classical guitar performed by Mak Grgi\u0107 along with pianists Orion Weiss and Andrew Armstrong performing George Gershwin\u2019s \u201cAn American in Paris\u201d and favorite composers including Johann Sebastian Bach [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/new-canaan-chamber-music-americans-in-paris-concert/2025-01-28/","startDate":"2025-01-28T19:30:00-05:00","endDate":"2025-01-28T21:30:00-05:00","location":{"@type":"Place","name":"First Presbyterian Church of New Canaan","description":"","url":"https://newcanaanite.com/venue/first-presbyterian-church-of-new-canaan-2","address":{"@type":"PostalAddress","streetAddress":"178 Oenoke Ridge","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"Select a Country:"},"geo":{"@type":"GeoCoordinates","latitude":41.1547166,"longitude":-73.500014699999994},"telephone":"203-966-0002","sameAs":"www.fpcnc.org"},"organizer":{"@type":"Person","name":"New Canaan Chamber Music","description":"","url":"https://newcanaanite.com/organizer/new-canaan-chamber-music","telephone":"2035946613","email":"&#105;&#110;&#102;&#111;&#64;&#110;ewc&#97;&#110;a&#97;&#110;ch&#97;mb&#101;r&#109;&#117;&#115;ic.&#111;r&#103;","sameAs":"http://www.newcanaanchambermusic.org"},"offers":{"@type":"Offer","price":"50","url":"https://newcanaanite.com/new-canaan-event/new-canaan-chamber-music-americans-in-paris-concert/2025-01-28/"}},{"@context":"http://schema.org","@type":"Event","name":"Family Wellness Made Simple with Dr. Raquel Harrison","description":"&lt;p&gt;New Canaan Cares in partnership with New Canaan Country School presents: Family Wellness Made Simple with Dr. Raquel Harrison. Dr. Harrison will share practical strategies for achieving balance by exploring the science behind sleep, nutrition, exercise, and more. Parents will walk away with actionable insights to support your tween or teen\u2019s well-being. This is an [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/family-wellness-made-simple-with-dr-raquel-harrison/","startDate":"2025-01-29T11:00:00-05:00","endDate":"2025-01-29T12:00:00-05:00","location":{"@type":"Place","name":"New Canaan Country School","description":"","url":"https://newcanaanite.com/venue/new-canaan-country-school-2","address":{"@type":"PostalAddress","streetAddress":"635 Frogtown Rd","addressLocality":"NEW CANAAN","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.131785899999997,"longitude":-73.5218761},"telephone":"2038315608","sameAs":"http://www.countryschool.net/visit"},"organizer":{"@type":"Person","name":"New Canaan CARES","description":"","url":"https://newcanaanite.com/organizer/new-canaan-cares-26","telephone":"203-966-7862","email":"&#106;russey&#64;n&#101;w&#99;ana&#97;&#110;&#99;&#97;r&#101;&#115;&#46;&#111;rg","sameAs":"http://www.newcanaancares.org"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/family-wellness-made-simple-with-dr-raquel-harrison/"}},{"@context":"http://schema.org","@type":"Event","name":"Hit Pause to Redesign Your Life: Jeanne Collins\u2019 Inspiring TEDx Journey to Life-Work Balance","description":"&lt;p&gt;Women\u2019s Networking Group of Fairfield County Proudly Hosts a Special Event with Jeanne Collins who will present her TEDX Talk about finding life balance after being fired. Topic: Hit Pause - Listen - Design To Find Live Balance Date 1: January 14th from 5:30 - 7:00 pm at Carriage Barn Arts Center, New Canaan or [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/01/thumbnail_Jeanne-Special-Event.png","url":"https://newcanaanite.com/new-canaan-event/hit-pause-to-redesign-your-life-jeanne-collins-inspiring-tedx-journey-to-life-work-balance/2025-01-29/","startDate":"2025-01-29T12:30:00-05:00","endDate":"2025-01-29T14:00:00-05:00","location":{"@type":"Place","name":"Carriage Barn Art Center","description":"","url":"https://newcanaanite.com/venue/carriage-barn-art-center","address":{"@type":"PostalAddress","streetAddress":"Waveny Park","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.123072999999998,"longitude":-73.490201600000006},"telephone":"203 972 1895","sameAs":"carriagebarn.org"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/hit-pause-to-redesign-your-life-jeanne-collins-inspiring-tedx-journey-to-life-work-balance/2025-01-29/"}},{"@context":"http://schema.org","@type":"Event","name":"New Canaan Chamber Music \u201cAmericans in Paris\u201d Concert","description":"&lt;p&gt;New Canaan Chamber Music Audiences are in for an exciting February surprise! They can again \u201cAnticipate the Unexpected\u201d when, for the first time, the program will include classical guitar performed by Mak Grgi\u0107 along with pianists Orion Weiss and Andrew Armstrong performing George Gershwin\u2019s \u201cAn American in Paris\u201d and favorite composers including Johann Sebastian Bach [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/new-canaan-chamber-music-americans-in-paris-concert/2025-01-29/","startDate":"2025-01-29T15:00:00-05:00","endDate":"2025-01-29T17:00:00-05:00","location":{"@type":"Place","name":"First Presbyterian Church of New Canaan","description":"","url":"https://newcanaanite.com/venue/first-presbyterian-church-of-new-canaan-2","address":{"@type":"PostalAddress","streetAddress":"178 Oenoke Ridge","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"Select a Country:"},"geo":{"@type":"GeoCoordinates","latitude":41.1547166,"longitude":-73.500014699999994},"telephone":"203-966-0002","sameAs":"www.fpcnc.org"},"organizer":{"@type":"Person","name":"New Canaan Chamber Music","description":"","url":"https://newcanaanite.com/organizer/new-canaan-chamber-music","telephone":"2035946613","email":"&#105;&#110;f&#111;&#64;n&#101;&#119;ca&#110;aa&#110;ch&#97;mber&#109;u&#115;&#105;&#99;&#46;&#111;rg","sameAs":"http://www.newcanaanchambermusic.org"},"offers":{"@type":"Offer","price":"50","url":"https://newcanaanite.com/new-canaan-event/new-canaan-chamber-music-americans-in-paris-concert/2025-01-29/"}},{"@context":"http://schema.org","@type":"Event","name":"Lunch and learn with Jeanne Gnuse","description":"&lt;p&gt;Lapham Community: Learn the process of writing your Memoir from recently published local author Jeanne Gnuse and something about her book \\'The Red Mustang: The Incredible RIDE OF Jeanne and Tom.&quot;&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2024/12/thumbnail_IMG_7230.jpg","url":"https://newcanaanite.com/new-canaan-event/lunch-and-learn-with-jeanne-gnuse/","startDate":"2025-01-30T12:00:00-05:00","endDate":"2025-01-30T13:00:00-05:00","location":{"@type":"Place","name":"Lapham Community Center","description":"","url":"https://newcanaanite.com/venue/lapham-community-center","address":{"@type":"PostalAddress","streetAddress":"Waveny Park","addressLocality":"New Canaan ","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.123072999999998,"longitude":-73.490201600000006},"telephone":"203-594-3620","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"New Canaan Chamber Music \u201cAmericans in Paris\u201d Concert","description":"&lt;p&gt;New Canaan Chamber Music Audiences are in for an exciting February surprise! They can again \u201cAnticipate the Unexpected\u201d when, for the first time, the program will include classical guitar performed by Mak Grgi\u0107 along with pianists Orion Weiss and Andrew Armstrong performing George Gershwin\u2019s \u201cAn American in Paris\u201d and favorite composers including Johann Sebastian Bach [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/new-canaan-chamber-music-americans-in-paris-concert/2025-01-30/","startDate":"2025-01-30T15:00:00-05:00","endDate":"2025-01-30T17:00:00-05:00","location":{"@type":"Place","name":"First Presbyterian Church of New Canaan","description":"","url":"https://newcanaanite.com/venue/first-presbyterian-church-of-new-canaan-2","address":{"@type":"PostalAddress","streetAddress":"178 Oenoke Ridge","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"Select a Country:"},"geo":{"@type":"GeoCoordinates","latitude":41.1547166,"longitude":-73.500014699999994},"telephone":"203-966-0002","sameAs":"www.fpcnc.org"},"organizer":{"@type":"Person","name":"New Canaan Chamber Music","description":"","url":"https://newcanaanite.com/organizer/new-canaan-chamber-music","telephone":"2035946613","email":"in&#102;o&#64;n&#101;w&#99;&#97;n&#97;a&#110;c&#104;&#97;m&#98;e&#114;&#109;&#117;sic.or&#103;","sameAs":"http://www.newcanaanchambermusic.org"},"offers":{"@type":"Offer","price":"50","url":"https://newcanaanite.com/new-canaan-event/new-canaan-chamber-music-americans-in-paris-concert/2025-01-30/"}},{"@context":"http://schema.org","@type":"Event","name":"1-Year Anniversary of Intentional Self Aesthetics","description":"&lt;p&gt;.&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/01/Blue-Pink-Dreamy-Aesthetic-Invitation-Anniversary-Celebration-Party-Instagram-Post.jpg","url":"https://newcanaanite.com/new-canaan-event/1-year-anniversary-of-intentional-self-aesthetics/","startDate":"2025-01-30T18:00:00-05:00","endDate":"2025-01-30T21:00:00-05:00","location":{"@type":"Place","name":"Intentional Self Aesthestics","description":"","url":"https://newcanaanite.com/venue/intentional-self-aesthestics","address":{"@type":"PostalAddress","streetAddress":"23 Vitti Street","addressLocality":"New","postalCode":"06840","addressCountry":"United States"},"telephone":"203.594.1890","sameAs":"https://intentionalselfaesthetics.com"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/1-year-anniversary-of-intentional-self-aesthetics/"}},{"@context":"http://schema.org","@type":"Event","name":"Army Pilot Recalls Flying Vietnam Missions at Men\u2019s Club","description":"&lt;p&gt;The New Canaan Men\u2019s Club will hear about the real-life experiences of U.S. Army pilot, Francis Doherty, who flew covert reconnaissance missions in Vietnam, when it meets Friday at 10 a.m. in Morrill Hall at St. Mark\u2019s Episcopal Church, 111 Oenoke Ridge. Doherty is the author of \u201cOnly the Light Moves: Flying Covert Reconnaissance Missions [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/army-pilot-recalls-flying-vietnam-missions-at-mens-club/","startDate":"2025-01-31T10:00:00-05:00","endDate":"2025-01-31T11:30:00-05:00","location":{"@type":"Place","name":"Morrill Hall at St. Mark&#8217;s Church","description":"","url":"https://newcanaanite.com/venue/morrill-hall-at-st-marks-church-2","address":{"@type":"PostalAddress","streetAddress":"111 Oenoke Ridge Rd","addressLocality":"New Canaan","addressRegion":"CT","addressCountry":"United States"},"telephone":"","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"45th Annual Photography Exhibition Opening Reception at the Carriage Barn","description":"&lt;p&gt;45th Annual Photography Exhibition at the Carriage Barn opening reception will take place on February 1, 4-6pm. Juried by Brett Abbott, Executive Director of the New Britain Museum of American Art. Special Exhibition Events Saturday, Feb. 1 from 4-6pm: Opening Reception Friday, Feb. 7: Group visit to the NBMAA, including lunch and tour of the [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/45th-annual-photography-exhibition-opening-reception-at-the-carriage-barn/","startDate":"2025-02-01T16:00:00-05:00","endDate":"2025-02-01T18:00:00-05:00","location":{"@type":"Place","name":"Carriage Barn Arts Center","description":"","url":"https://newcanaanite.com/venue/carriage-barn-arts-center-7","address":{"@type":"PostalAddress","streetAddress":"681 South Avenue","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.126845199999998,"longitude":-73.485525899999999},"telephone":"203-972-1895","sameAs":"www.carriagebarn.org"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/45th-annual-photography-exhibition-opening-reception-at-the-carriage-barn/"}},{"@context":"http://schema.org","@type":"Event","name":"Mad Hatter Valentines Tea Party","description":"&lt;p&gt;Don\\'t be late for our very important date! Please join us for our second annual Mad Hatter Valentine\\'s Tea Party on Sunday February 2 from 2:00-3:30 pm. We will have crafts, tea sandwiches, sweets and tea and fun for all. This event is age appropriate for children ages 3-10, and is a parent/grandparent/caregiver and child [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/01/new5-Tea-party.png","url":"https://newcanaanite.com/new-canaan-event/mad-hatter-valentines-tea-party-2/","startDate":"2025-02-02T14:00:00-05:00","endDate":"2025-02-02T15:30:00-05:00","location":{"@type":"Place","name":"New Canaan Museum &amp; Historical Society","description":"","url":"https://newcanaanite.com/venue/new-canaan-museum-historical-society","address":{"@type":"PostalAddress","streetAddress":"13 Oenoke Ridge","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"telephone":"201-966-1776","sameAs":"https://nchistory.org/"},"organizer":{"@type":"Person","name":"New Canaan Museum &amp; Historical Society","description":"","url":"https://newcanaanite.com/organizer/new-canaan-museum-historical-society","telephone":"203-966-1776","email":"&#105;&#110;&#102;o&#64;&#110;&#99;h&#105;&#115;to&#114;&#121;.&#111;&#114;g","sameAs":"https://nchistory.org/"},"offers":{"@type":"Offer","price":"25 \u2013 40","url":"https://newcanaanite.com/new-canaan-event/mad-hatter-valentines-tea-party-2/"}},{"@context":"http://schema.org","@type":"Event","name":"Lunch &amp; Learn: Growing a Cutting Garden with Elisa Bulgrin","description":"&lt;p&gt;Elisa Bulgrin, owner of Longfield Farm, will share her story of how she started her cut flower business. She will also discuss how to plan and execute a cutting garden in your own backyard, including some tips and tricks to help ensure success based on her experience in her own gardens.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/lunch-learn-growing-a-cutting-garden-with-elisa-bulgrin/","startDate":"2025-02-04T10:00:00-05:00","endDate":"2025-02-04T12:00:00-05:00","location":{"@type":"Place","name":"New Canaan Nature Center","description":"","url":"https://newcanaanite.com/venue/new-canaan-nature-center-4","address":{"@type":"PostalAddress","streetAddress":"144 Oenone Ridge","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.153307499999997,"longitude":-73.499263400000004},"telephone":"2039669577","sameAs":"http://www.newcanaannature.org"},"organizer":{"@type":"Person","name":"New Canaan Nature Center","description":"","url":"https://newcanaanite.com/organizer/new-canaan-nature-center","telephone":"2039669577","email":"","sameAs":"http://www.newcanaannature.org/"},"offers":{"@type":"Offer","price":"40","url":"https://newcanaanite.com/new-canaan-event/lunch-learn-growing-a-cutting-garden-with-elisa-bulgrin/"}},{"@context":"http://schema.org","@type":"Event","name":"Candlelit Soundbath at the Carriage Barn","description":"&lt;p&gt;The ultimate in self care! Step into a realm of tranquility and profound relaxation at this candlelit sound bath experience with Diane &amp; Catherine of Grounded Meditation. After a brief grounding meditation, amidst the glowing landscape at the Carriage Barn, you\u2019ll be enveloped in a symphony of harmonious vibrations, produced by an assortment of crystal [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/candlelit-soundbath-at-the-carriage-barn-2/","startDate":"2025-02-04T18:30:00-05:00","endDate":"2025-02-04T19:30:00-05:00","location":{"@type":"Place","name":"Carriage Barn Arts Center","description":"","url":"https://newcanaanite.com/venue/carriage-barn-arts-center-7","address":{"@type":"PostalAddress","streetAddress":"681 South Avenue","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.126845199999998,"longitude":-73.485525899999999},"telephone":"203-972-1895","sameAs":"www.carriagebarn.org"},"offers":{"@type":"Offer","price":"40","url":"https://newcanaanite.com/new-canaan-event/candlelit-soundbath-at-the-carriage-barn-2/"}},{"@context":"http://schema.org","@type":"Event","name":"Nature-Based, Toxic-Free Land Care Perfect Earth Project with Edwina von Gal: Zoom","description":"&lt;p&gt;Founder and Chair of the Perfect Earth Project, horticulturist and landscape designer, Edwina von Gal is a leading voice in sustainable gardening and nature based, toxin-free landscape design. We are guaranteed to be inspired by her expertise at harmonizing stunning landscapes with practices which promote the health of families, pets and vital ecosystems.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/nature-based-toxic-free-land-care-perfect-earth-project-with-edwina-von-gal-zoom/","startDate":"2025-02-05T09:30:00-05:00","endDate":"2025-02-05T11:00:00-05:00","location":{"@type":"Place","name":"Zoom","description":"","url":"https://newcanaanite.com/venue/zoom-5","address":{"@type":"PostalAddress"},"telephone":"","sameAs":""},"organizer":{"@type":"Person","name":"New Canaan Beautification League","description":"","url":"https://newcanaanite.com/organizer/new-canaan-beautification-league","telephone":"","email":"","sameAs":"http://www.newcanaanbeautification.org/"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/nature-based-toxic-free-land-care-perfect-earth-project-with-edwina-von-gal-zoom/"}},{"@context":"http://schema.org","@type":"Event","name":"WNG Monthly Networking Meeting","description":"&lt;p&gt;Topic: Transform Your Brand in 2025: Practical PR and Marketing Tips You Can Use Today Date: 5th February 2025 Time: 10:30 AM \u2013 12:00 PM EST Location:New Canaan Library - Tate Room, 151 Main St, New Canaan, CT 06840, The Women\\'s Networking Group of Fairfield County proudly presents Karlie Reitano as our keynote speaker for [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/01/FEb-5th-Even-Graphic.png","url":"https://newcanaanite.com/new-canaan-event/wng-monthly-networking-meeting/","startDate":"2025-02-05T10:30:00-05:00","endDate":"2025-02-05T12:00:00-05:00","location":{"@type":"Place","name":"New Canaan Library &#8211; Tate Room","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-tate-room","address":{"@type":"PostalAddress","streetAddress":"151 Main St","addressLocality":"New Canaan","addressRegion":"CT","addressCountry":"United States"},"telephone":"","sameAs":"https://www.newcanaanlibrary.org/"},"organizer":{"@type":"Person","name":"Women&#8217;s Networking Group of Fairfield County","description":"","url":"https://newcanaanite.com/organizer/womens-networking-group-of-fairfield-county","telephone":"203-801-8007","email":"","sameAs":"https://www.facebook.com/groups/878329932244707/"},"offers":{"@type":"Offer","price":"50.00","url":"https://newcanaanite.com/new-canaan-event/wng-monthly-networking-meeting/"}},{"@context":"http://schema.org","@type":"Event","name":"Surviving Loss in Tragedies like the LA Wildfires","description":"&lt;p&gt;Voices Center for Resilience presents \u201cSurviving Loss in Tragedies like the LA Wildfires,\u201d featuring Dr. Ken Druck. In this virtual, free webinar, Dr. Druck, an internationally acclaimed expert on loss and healing, will discuss how participants can learn to give themselves the permission, support, compassionate self-care and patience necessary to process their losses, honor their [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/01/survivingloss_header_001.jpg","url":"https://newcanaanite.com/new-canaan-event/surviving-loss-in-tragedies-like-the-la-wildfires/","startDate":"2025-02-05T19:00:00-05:00","endDate":"2025-02-05T20:30:00-05:00","organizer":{"@type":"Person","name":"Voices Center for Resilience","description":"","url":"https://newcanaanite.com/organizer/voices-center-for-resilience-2","telephone":"2039663911","email":"&#106;cal&#102;&#111;&#64;&#118;&#111;ic&#101;&#115;ce&#110;&#116;&#101;r.o&#114;g","sameAs":"https://voicescenter.org/"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/surviving-loss-in-tragedies-like-the-la-wildfires/"}},{"@context":"http://schema.org","@type":"Event","name":"Noted Astronomer Links Religion and Science at Men\u2019s Club","description":"&lt;p&gt;In remarks combining science and theology, Brother Guy Consolmagno, an astronomer at the renowned Vatican Observatory and the author of numerous books on astronomy and science, will speak to the New Canaan Men\u2019s Club Friday (February 7) when it meets at 10 a.m. in St. Mark\u2019s Episcopal Church 111Oenoke Ridge. In a talk titled \u201cWhen [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/noted-astronomer-links-religion-and-science-at-mens-club/","startDate":"2025-02-07T10:00:00-05:00","endDate":"2025-02-07T10:00:00-05:00","location":{"@type":"Place","name":"Morrill Hall at St. Mark&#8217;s Church","description":"","url":"https://newcanaanite.com/venue/morrill-hall-at-st-marks-church-2","address":{"@type":"PostalAddress","streetAddress":"111 Oenoke Ridge Rd","addressLocality":"New Canaan","addressRegion":"CT","addressCountry":"United States"},"telephone":"","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"Night To Shine &#8211; hosted by Grace Community Church","description":"&lt;p&gt;Night to Shine is an annual event sponsored by the Tim Tebow Foundation, dedicated to honoring individuals with special needs in our community. This unforgettable, prom-like experience is centered around God\\'s love and designed to celebrate the incredible individuals who participate with special needs. This year\u2019s event/celebration will be held at Grace Farms in New [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/night-to-shine-hosted-by-grace-community-church/","startDate":"2025-02-07T18:00:00-05:00","endDate":"2025-02-07T21:00:00-05:00","location":{"@type":"Place","name":"Grace Farms","description":"","url":"https://newcanaanite.com/venue/grace-farms-2","address":{"@type":"PostalAddress","streetAddress":"365 Lukes Wood Road","addressLocality":"New Canaan","addressRegion":"Connecticut","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.1948443,"longitude":-73.511845300000004},"telephone":"2039201702","sameAs":"gracefarms.org"},"organizer":{"@type":"Person","name":"Grace Community Church","description":"","url":"https://newcanaanite.com/organizer/grace-community-church","telephone":"203-966-7600\u0003","email":"&#105;n&#102;o&#64;&#103;r&#97;c&#101;&#99;ommunity&#46;&#105;&#110;&#102;o","sameAs":"https://www.gracecommunity.info/"}},{"@context":"http://schema.org","@type":"Event","name":"Night to Shine &#8211; Hosted by Grace Community Church","description":"&lt;p&gt;Night to Shine is an annual event sponsored by the Tim Tebow Foundation, dedicated to honoring individuals with special needs in our community. This unforgettable, prom-like experience is centered around God\\'s love and designed to celebrate the incredible individuals who participate with special needs. This year\u2019s event/celebration will be held at Grace Farms in New [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/01/thumbnail_image0-4.png","url":"https://newcanaanite.com/new-canaan-event/night-to-shine-hosted-by-grace-community-church-2/","startDate":"2025-02-07T18:00:00-05:00","endDate":"2025-02-07T21:00:00-05:00","location":{"@type":"Place","name":"Grace Farms","description":"","url":"https://newcanaanite.com/venue/grace-farms-2","address":{"@type":"PostalAddress","streetAddress":"365 Lukes Wood Road","addressLocality":"New Canaan","addressRegion":"Connecticut","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.1948443,"longitude":-73.511845300000004},"telephone":"2039201702","sameAs":"gracefarms.org"},"organizer":{"@type":"Person","name":"Grace Community Church","description":"","url":"https://newcanaanite.com/organizer/grace-community-church","telephone":"203-966-7600\u0003","email":"&#105;&#110;&#102;o&#64;&#103;rac&#101;&#99;&#111;m&#109;u&#110;&#105;&#116;&#121;&#46;in&#102;o","sameAs":"https://www.gracecommunity.info/"}},{"@context":"http://schema.org","@type":"Event","name":"HALO Wellness Weekend \u2013A Community Celebration of Health &amp; Fitness","description":"&lt;p&gt;To mark its relaunch and expanded offerings, HALO Fitness invites the community to Wellness Weekend on February 8-9, 2025\u2014an interactive opportunity to explore the newly renovated 7,000+ square-foot fitness facility, including the 1,200-square-foot Turf Room and upgraded fitness studios. Guests can experience complimentary wellness classes and experience for all ages, and enjoy exclusive event promotions [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/01/Halo-Wellness-Weekend-2.png","url":"https://newcanaanite.com/new-canaan-event/halo-wellness-weekend-a-community-celebration-of-health-fitness/2025-02-08/","startDate":"2025-02-08T07:00:00-05:00","endDate":"2025-02-08T16:00:00-05:00","location":{"@type":"Place","name":"Halo Fitness","description":"","url":"https://newcanaanite.com/venue/halo-fitness","address":{"@type":"PostalAddress","streetAddress":"45 Grove St","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"telephone":"203-594-9909","sameAs":"www.halofitnessnc.com"},"organizer":{"@type":"Person","name":"Halo Fitness","description":"","url":"https://newcanaanite.com/organizer/halo-fitness","telephone":"2035949909","email":"i&#110;fo&#64;&#104;&#97;&#108;&#111;&#115;&#116;&#117;&#100;&#105;&#111;&#115;&#46;co&#109;","sameAs":"http://www.halofitnessnc.com"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/halo-wellness-weekend-a-community-celebration-of-health-fitness/2025-02-08/"}},{"@context":"http://schema.org","@type":"Event","name":"Women\u2019s Self-Care Workshop","description":"&lt;p&gt;Unwind, Rejuvenate &amp; Indulge in Self-Care! \ud83d\udc86\u200d\u2640\ufe0f Women\u2019s Self-Care Workshop with Allison Milano \ud83d\udc86\u200d\u2640\ufe0f \ud83d\udcc5 Saturday, February 8, 2025 \ud83d\udd5d 2:30 PM \u2013 4:00 PM EST \ud83d\udccd Inspire Train Fit, 770 Boston Post Road, Darien, CT \u2728 An Exclusive Afternoon of Relaxation &amp; Renewal The Women\\'s Networking Group of Fairfield County invites you to a [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/02/Graphic-Event-Feb-8th-1.png","url":"https://newcanaanite.com/new-canaan-event/womens-self-care-workshop/","startDate":"2025-02-08T14:30:00-05:00","endDate":"2025-02-08T16:00:00-05:00","location":{"@type":"Place","name":"Inspire Train Fit, LLC","description":"","url":"https://newcanaanite.com/venue/inspire-train-fit-llc","address":{"@type":"PostalAddress","streetAddress":"770 Boston Post Road","addressLocality":"Darien","addressRegion":"CT","postalCode":"06820","addressCountry":"United States"},"telephone":"","sameAs":"https://inspiretrainfit.com/"},"organizer":{"@type":"Person","name":"Women&#8217;s Networking Group of Fairfield County","description":"","url":"https://newcanaanite.com/organizer/womens-networking-group-of-fairfield-county-5","telephone":"","email":"h&#101;l&#108;o&#64;&#119;&#110;g&#99;&#116;.c&#111;m","sameAs":"https://www.wngct.com/"},"offers":{"@type":"Offer","price":"55.00","url":"https://newcanaanite.com/new-canaan-event/womens-self-care-workshop/"}},{"@context":"http://schema.org","@type":"Event","name":"Film Screening: Crooklyn by Director Spike Lee Movie","description":"&lt;p&gt;New Canaan Library will host a screening of Crooklyn. Spike Lee\\'s semi-autobiographical story of growing up in 1970s Bedford-Stuyvesant features a vibrant cast including Alfre Woodard and Delroy Lindo. Rated PG-13.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/film-screening-crooklyn-by-director-spike-lee-movie/","startDate":"2025-02-08T15:00:00-05:00","endDate":"2025-02-08T17:00:00-05:00","organizer":{"@type":"Person","name":"New canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-5","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/film-screening-crooklyn-by-director-spike-lee-movie/"}},{"@context":"http://schema.org","@type":"Event","name":"Music of Benjamin Britten","description":"&lt;p&gt;The Friends of the Music at St. Mark\u2019s New Canaan, CT Presents Music of Benjamin Britten. Saturday, February 8, 2025, 5pm, in the soaring mid-century modern St. Mark\u2019s Episcopal Church, 111 Oenoke Ridge, New Canaan, CT. Performed by Trevor Scott, tenor; with Eliana Barwinski, mezzo-soprano; Susan LaFever, French horn; all accompanied by Tomoko Nakayama, pianist. [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/music-of-benjamin-britten/","startDate":"2025-02-08T17:00:00-05:00","endDate":"2025-02-08T19:30:00-05:00","location":{"@type":"Place","name":"Saint Mark&#8217;s Episcopal Church","description":"","url":"https://newcanaanite.com/venue/saint-marks-episcopal-church","address":{"@type":"PostalAddress","streetAddress":"111 Oenoke Ridge","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"telephone":"","sameAs":"https://www.troopwebhost.org/Troop70NewCanaan/Index.htm"},"organizer":{"@type":"Person","name":"Ned Tipton","description":"","url":"https://newcanaanite.com/organizer/ned-tipton","telephone":"","email":"&#110;t&#105;&#112;&#116;&#111;&#110;&#64;s&#116;&#109;&#97;rk&#115;&#110;e&#119;canaan&#46;o&#114;g","sameAs":""},"offers":{"@type":"Offer","price":"10 \u2013 35","url":"https://newcanaanite.com/new-canaan-event/music-of-benjamin-britten/"}},{"@context":"http://schema.org","@type":"Event","name":"\u2018Oklahoma!\u2019 A Concert Version","description":"&lt;p&gt;You don\u2019t want to miss the magical performance of Oklahoma! A Concert Version, featuring the professional musicians of the Norwalk Symphony Orchestra, Broadway actors, local student musicians and theater groups.\u00a0 From \u201cOh, What a Beautiful Mornin\u201d to \u201cSurrey with the Fringe on Top\u201d and \u201cPeople Will Say We\u2019re in Love,\u201d the hits just keep on [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/02/Banner-Ad-Oklahoma.x2.jpg","url":"https://newcanaanite.com/new-canaan-event/oklahoma-a-concert-version/2025-02-08/","startDate":"2025-02-08T19:30:00-05:00","endDate":"2025-02-08T21:00:00-05:00","location":{"@type":"Place","name":"Norwalk Concert Hall","description":"","url":"https://newcanaanite.com/venue/norwalk-concert-hall","address":{"@type":"PostalAddress","streetAddress":"125 East Avenue","addressLocality":"Norwalk","addressRegion":"CT","postalCode":"06851","addressCountry":"United States"},"telephone":"(203) 854-7900","sameAs":""},"organizer":{"@type":"Person","name":"Norwalk Symphony","description":"","url":"https://newcanaanite.com/organizer/norwalk-symphony","telephone":"","email":"","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"HALO Wellness Weekend \u2013A Community Celebration of Health &amp; Fitness","description":"&lt;p&gt;To mark its relaunch and expanded offerings, HALO Fitness invites the community to Wellness Weekend on February 8-9, 2025\u2014an interactive opportunity to explore the newly renovated 7,000+ square-foot fitness facility, including the 1,200-square-foot Turf Room and upgraded fitness studios. Guests can experience complimentary wellness classes and experience for all ages, and enjoy exclusive event promotions [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/01/Halo-Wellness-Weekend-2.png","url":"https://newcanaanite.com/new-canaan-event/halo-wellness-weekend-a-community-celebration-of-health-fitness/2025-02-09/","startDate":"2025-02-09T07:00:00-05:00","endDate":"2025-02-09T16:00:00-05:00","location":{"@type":"Place","name":"Halo Fitness","description":"","url":"https://newcanaanite.com/venue/halo-fitness","address":{"@type":"PostalAddress","streetAddress":"45 Grove St","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"telephone":"203-594-9909","sameAs":"www.halofitnessnc.com"},"organizer":{"@type":"Person","name":"Halo Fitness","description":"","url":"https://newcanaanite.com/organizer/halo-fitness","telephone":"2035949909","email":"&#105;&#110;&#102;o&#64;&#104;&#97;&#108;&#111;&#115;t&#117;&#100;io&#115;&#46;com","sameAs":"http://www.halofitnessnc.com"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/halo-wellness-weekend-a-community-celebration-of-health-fitness/2025-02-09/"}},{"@context":"http://schema.org","@type":"Event","name":"Shadow Dance Story Time with Woof Woof the Shadow Pup","description":"&lt;p&gt;Free Family Program presented at the Carriage Barn in partnership with New Canaan CARES and the New Canaan YMCA Woof Woof the Shadow Pup illuminates the importance of understanding and acknowledging the emotional life of young children. This inspiring story is an invitation for families to experience shadow play at home and in the magical [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/shadow-dance-story-time-with-woof-woof-the-shadow-pup/","startDate":"2025-02-09T11:00:00-05:00","endDate":"2025-02-09T17:00:00-05:00","location":{"@type":"Place","name":"Carriage Barn Arts Center","description":"","url":"https://newcanaanite.com/venue/carriage-barn-arts-center-8","address":{"@type":"PostalAddress","streetAddress":"681 South Avenue","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.126845199999998,"longitude":-73.485525899999999},"telephone":"203-972-1895","sameAs":"www.carriagebarn.org"},"organizer":{"@type":"Person","name":"Carriage Barn Arts Center","description":"","url":"https://newcanaanite.com/organizer/carriage-barn-arts-center","telephone":"203 872 1895","email":"&#97;d&#109;&#105;n&#64;ca&#114;&#114;&#105;age&#98;&#97;&#114;n&#46;&#111;&#114;&#103;","sameAs":"http://carriagebarn.org/"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/shadow-dance-story-time-with-woof-woof-the-shadow-pup/"}},{"@context":"http://schema.org","@type":"Event","name":"Author Talk: Amy Sohn, &#8216;The Man Who Hated Women&#8217;","description":"&lt;p&gt;About the Book: Anthony Comstock, special agent to the U.S. Post Office, was one of the most important men in the lives of nineteenth-century women. His eponymous law, passed in 1873, penalized the mailing of contraception and obscenity with long sentences and steep fines. The word Comstockery came to connote repression and prudery. Between 1873 [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2024/12/TheManWhoHatedWomen_JKF_V2-1.jpg","url":"https://newcanaanite.com/new-canaan-event/author-talk-amy-sohn-the-man-who-hated-women/","startDate":"2025-02-09T14:00:00-05:00","endDate":"2025-02-09T15:00:00-05:00","location":{"@type":"Place","name":"New Canaan Museum &amp; Historical Society","description":"","url":"https://newcanaanite.com/venue/new-canaan-museum-historical-society","address":{"@type":"PostalAddress","streetAddress":"13 Oenoke Ridge","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"telephone":"201-966-1776","sameAs":"https://nchistory.org/"},"organizer":{"@type":"Person","name":"New Canaan Museum &amp; Historical Society","description":"","url":"https://newcanaanite.com/organizer/new-canaan-museum-historical-society","telephone":"203-966-1776","email":"i&#110;f&#111;&#64;nc&#104;i&#115;to&#114;y&#46;&#111;r&#103;","sameAs":"https://nchistory.org/"},"offers":{"@type":"Offer","price":"Free \u2013 10","url":"https://newcanaanite.com/new-canaan-event/author-talk-amy-sohn-the-man-who-hated-women/"}},{"@context":"http://schema.org","@type":"Event","name":"\u2018Oklahoma!\u2019 A Concert Version","description":"&lt;p&gt;You don\u2019t want to miss the magical performance of Oklahoma! A Concert Version, featuring the professional musicians of the Norwalk Symphony Orchestra, Broadway actors, local student musicians and theater groups.\u00a0 From \u201cOh, What a Beautiful Mornin\u201d to \u201cSurrey with the Fringe on Top\u201d and \u201cPeople Will Say We\u2019re in Love,\u201d the hits just keep on [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/02/Banner-Ad-Oklahoma.x2.jpg","url":"https://newcanaanite.com/new-canaan-event/oklahoma-a-concert-version/2025-02-09/","startDate":"2025-02-09T14:00:00-05:00","endDate":"2025-02-09T15:30:00-05:00","location":{"@type":"Place","name":"Norwalk Concert Hall","description":"","url":"https://newcanaanite.com/venue/norwalk-concert-hall","address":{"@type":"PostalAddress","streetAddress":"125 East Avenue","addressLocality":"Norwalk","addressRegion":"CT","postalCode":"06851","addressCountry":"United States"},"telephone":"(203) 854-7900","sameAs":""},"organizer":{"@type":"Person","name":"Norwalk Symphony","description":"","url":"https://newcanaanite.com/organizer/norwalk-symphony","telephone":"","email":"","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"Legislative Priorities in CT: Session Kickoff with Our Legislators","description":"&lt;p&gt;Our local legislators--Senators Fazio and Maher and Representatives Dathan, O\\'Dea, and Constantine--will share their priorities for the current legislative session in Hartford, hear your concerns, and answer questions regarding the issues facing our state. Co-sponsored by Vote New Canaan, an initiative of the Youth Board of the New Canaan League of Women Voters.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/legislative-priorities-in-ct-session-kickoff-with-our-legislators/","startDate":"2025-02-10T18:00:00-05:00","endDate":"2025-02-10T19:00:00-05:00","location":{"@type":"Place","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-14","address":{"@type":"PostalAddress","streetAddress":"151 Main Street","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840  ","addressCountry":"United States"},"telephone":"203-594-5000","sameAs":"newcanaanlibrary.org"},"organizer":{"@type":"Person","name":"New canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-5","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/legislative-priorities-in-ct-session-kickoff-with-our-legislators/"}},{"@context":"http://schema.org","@type":"Event","name":"HAYVN Halftime: AI Unleashed: Empowering Women Entrepreneurs","description":"&lt;p&gt;HAYVN 320 Boston Post Road Suite 180 Darien, CT 06820 Show map Refund Policy No Refunds About this event HAYVN HalfTime IN-PERSON EVENT Tuesday, 2/11/25, 12-1pm COST: Member: Free Non-Member: $20 Topic: AI Unleashed: Empowering Women Entrepreneurs Featuring Kristin Greene, Senior Education Executive, Microsoft Join us for an engaging and hands-on session at HAYVN, designed [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/hayvn-halftime-ai-unleashed-empowering-women-entrepreneurs/","startDate":"2025-02-11T12:00:00-05:00","endDate":"2025-02-11T13:00:00-05:00","location":{"@type":"Place","name":"HAYVN","description":"","url":"https://newcanaanite.com/venue/hayvn-2","address":{"@type":"PostalAddress","streetAddress":"320 Boston Post Rd","addressLocality":"Darien","addressRegion":"CT","postalCode":"06820"},"telephone":"833.429.8659","sameAs":"hayvn.com"},"organizer":{"@type":"Person","name":"HAYVN","description":"","url":"https://newcanaanite.com/organizer/hayvn-2","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"Free \u2013 20","url":"https://newcanaanite.com/new-canaan-event/hayvn-halftime-ai-unleashed-empowering-women-entrepreneurs/"}},{"@context":"http://schema.org","@type":"Event","name":"Casual Chess Play with RedBandit Chess for Ages 10-101","description":"&lt;p&gt;Join us for a night of casual chess play from 6:00-8:00pm! Experienced instructors from RedBandit Chess will be on-hand providing advice as well as a brief lecture on important topics. All people aged 10-101 are welcome, including brand new players and experienced tournament players! Drop-in anytime between 6-8PM.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/casual-chess-play-with-redbandit-chess-for-ages-10-101/","startDate":"2025-02-11T18:00:00-05:00","endDate":"2025-02-11T20:00:00-05:00","location":{"@type":"Place","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-14","address":{"@type":"PostalAddress","streetAddress":"151 Main Street","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840  ","addressCountry":"United States"},"telephone":"203-594-5000","sameAs":"newcanaanlibrary.org"},"organizer":{"@type":"Person","name":"New canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-5","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/casual-chess-play-with-redbandit-chess-for-ages-10-101/"}},{"@context":"http://schema.org","@type":"Event","name":"Renowned Author Elinor Lipman Presents &#8220;Every Tom, Dick &amp; Harry&#8221;","description":"&lt;p&gt;We are thrilled to welcome author Elinor Lipman - one of the most beloved comedic writers of our time - to present her new book, Every Tom, Dick and Harry. It\u2019s a charming, laugh-out-loud tale of love and criminality, a pitch-perfect romantic comedy.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/renowned-author-elinor-lipman-presents-every-tom-dick-harry/","startDate":"2025-02-12T13:00:00-05:00","endDate":"2025-02-12T14:00:00-05:00","location":{"@type":"Place","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-14","address":{"@type":"PostalAddress","streetAddress":"151 Main Street","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840  ","addressCountry":"United States"},"telephone":"203-594-5000","sameAs":"newcanaanlibrary.org"},"organizer":{"@type":"Person","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-6","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/renowned-author-elinor-lipman-presents-every-tom-dick-harry/"}},{"@context":"http://schema.org","@type":"Event","name":"HAYVN SPONSORS;Living and Thriving in Long Island Sound: Our Critical Ecosystem","description":"&lt;p&gt;Wednesday, February 12 \u00b7 5:30 - 7:30pm EST Location HAYVN 320 Boston Post Road Suite 180 Darien, CT 06820 Show map Refund Policy No Refunds About this event About HAYVN\\'s Sustainability and Social Impact Group: If you are interested in learning about Sustainability and exploring topics/trends to make a difference please join us. You\\'ll hear [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/hayvn-sponsorsliving-and-thriving-in-long-island-sound-our-critical-ecosystem/","startDate":"2025-02-12T17:30:00-05:00","endDate":"2025-02-12T19:30:00-05:00","location":{"@type":"Place","name":"HAYVN","description":"","url":"https://newcanaanite.com/venue/hayvn-2","address":{"@type":"PostalAddress","streetAddress":"320 Boston Post Rd","addressLocality":"Darien","addressRegion":"CT","postalCode":"06820"},"telephone":"833.429.8659","sameAs":"hayvn.com"},"organizer":{"@type":"Person","name":"HAYVN","description":"","url":"https://newcanaanite.com/organizer/hayvn-2","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"15","url":"https://newcanaanite.com/new-canaan-event/hayvn-sponsorsliving-and-thriving-in-long-island-sound-our-critical-ecosystem/"}},{"@context":"http://schema.org","@type":"Event","name":"Blossom Hill\u2019s Annual For the Love of a Child Valentine\u2019s Event","description":"&lt;p&gt;Blossom Hill will hold its annual Valentine\u2019s event, For the Love of a Child, on January 13, 2025 from 12 - 2 pm at the New Canaan Playhouse. All proceeds will support its mission - education for peace - to transform the lives of displaced and at-risk children and youth globally. Start your Valentine\\'s week [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/01/Blossom-Hills-Galentines-invitation.png","url":"https://newcanaanite.com/new-canaan-event/blossom-hills-annual-for-the-love-of-a-child-valentines-event/","startDate":"2025-02-13T12:00:00-05:00","endDate":"2025-02-13T14:00:00-05:00","location":{"@type":"Place","name":"","description":"","url":"https://newcanaanite.com/venue/11758269","address":{"@type":"PostalAddress","addressRegion":"CT","addressCountry":"United States"},"telephone":"","sameAs":""},"organizer":{"@type":"Person","name":"Blossom Hill Foundation","description":"","url":"https://newcanaanite.com/organizer/blossom-hill-foundation","telephone":"","email":"","sameAs":"https://blossomhill-foundation.org/"},"offers":{"@type":"Offer","price":"100","url":"https://newcanaanite.com/new-canaan-event/blossom-hills-annual-for-the-love-of-a-child-valentines-event/"}},{"@context":"http://schema.org","@type":"Event","name":"Film Screening: If Beale Street Could Talk","description":"&lt;p&gt;Based on James Baldwin\\'s 1974 novel, If Beale Street Could Talk is a 2018 American romantic film drama written and directed by Academy Award winner Barry Jenkins. Rated R.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/film-screening-if-beale-street-could-talk/","startDate":"2025-02-13T18:00:00-05:00","endDate":"2025-02-13T20:00:00-05:00","location":{"@type":"Place","name":"new canaan library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-17","address":{"@type":"PostalAddress"},"telephone":"","sameAs":""},"organizer":{"@type":"Person","name":"New canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-5","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/film-screening-if-beale-street-could-talk/"}},{"@context":"http://schema.org","@type":"Event","name":"Men\u2019s Club To Hear What Goes into Producing &#8216;Live from Lincoln Center&#8217; for PBS","description":"&lt;p&gt;The former executive producer of the acclaimed series, \u201cLive from Lincoln Center,\u201d Andrew Wilk, will give members of the New Canaan Men\u2019s Club a sense of what it takes to produce concerts, theater, ballet and other live productions for PBS when he\u2019s interviewed during the club\u2019s meeting Friday (February 14). The interview is titled: \u201cCreating [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/mens-club-to-hear-what-goes-into-producing-live-from-lincoln-center-for-pbs/","startDate":"2025-02-14T10:00:00-05:00","endDate":"2025-02-14T11:30:00-05:00","location":{"@type":"Place","name":"Morrill Hall at St. Mark&#8217;s Church","description":"","url":"https://newcanaanite.com/venue/morrill-hall-at-st-marks-church-2","address":{"@type":"PostalAddress","streetAddress":"111 Oenoke Ridge Rd","addressLocality":"New Canaan","addressRegion":"CT","addressCountry":"United States"},"telephone":"","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"Opening Reception for &#8216;Color Me\u2026&#8217; Exhibition","description":"&lt;p&gt;Exhibition February 15 - March 13 Opening Reception Saturday, February 15, 2-4pm This Exhibit explores the artist\u2019s emotions through color across various media and genres. Each piece visually captures a distinct feeling or moment, using carefully crafted colors and subject matter to guide viewers on an introspective journey. Accompanied by brief descriptions, the artwork offers [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/color-me/","startDate":"2025-02-15T14:00:00-05:00","endDate":"2025-02-15T16:00:00-05:00","location":{"@type":"Place","name":"Silvermine Galleries","description":"","url":"https://newcanaanite.com/venue/silvermine-galleries","address":{"@type":"PostalAddress","streetAddress":"1037 Silvermine Road","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"telephone":"","sameAs":""},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/color-me/"}},{"@context":"http://schema.org","@type":"Event","name":"Lunch &amp; Learn: Clothing Historian Charlotte Engel Ellis","description":"&lt;p&gt;This month we feature NCM&amp;HS Charlotte Engel Ellis as she presents: Threads of Time -Unraveling my Journey as a Clothing Historian. Bring your brown bag lunch, soup or snack and join us at the Museum in the Lindstrom Room for our monthly Lunch &amp; Learn program. Charlotte, who is the Manager of the Museum\\'s 6000+ [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/02/charlotte.jpeg","url":"https://newcanaanite.com/new-canaan-event/lunch-learn-clothing-historian-charlotte-engel-ellis/","startDate":"2025-02-18T12:00:00-05:00","endDate":"2025-02-18T13:00:00-05:00","location":{"@type":"Place","name":"New Canaan Museum &amp; Historical Society","description":"","url":"https://newcanaanite.com/venue/new-canaan-museum-historical-society","address":{"@type":"PostalAddress","streetAddress":"13 Oenoke Ridge","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"telephone":"201-966-1776","sameAs":"https://nchistory.org/"},"organizer":{"@type":"Person","name":"New Canaan Museum &amp; Historical Society","description":"","url":"https://newcanaanite.com/organizer/new-canaan-museum-historical-society","telephone":"203-966-1776","email":"&#105;&#110;f&#111;&#64;&#110;&#99;&#104;&#105;&#115;&#116;o&#114;&#121;.&#111;&#114;g","sameAs":"https://nchistory.org/"},"offers":{"@type":"Offer","price":"Free \u2013 10","url":"https://newcanaanite.com/new-canaan-event/lunch-learn-clothing-historian-charlotte-engel-ellis/"}},{"@context":"http://schema.org","@type":"Event","name":"Film Screening: &#8216;Black Panther&#8217; Directed by Ryan Coogler","description":"&lt;p&gt;Superhero blockbuster film based on Marvel Comics\\' Black Panther, heir to the kingdom of Wakanda who must lead his people into a new future and confront a challenger from his country\\'s past. Rated PG-13.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/film-screening-black-panther-directed-by-ryan-coogler/","startDate":"2025-02-19T17:00:00-05:00","endDate":"2025-02-19T20:00:00-05:00","location":{"@type":"Place","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-14","address":{"@type":"PostalAddress","streetAddress":"151 Main Street","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840  ","addressCountry":"United States"},"telephone":"203-594-5000","sameAs":"newcanaanlibrary.org"},"organizer":{"@type":"Person","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-2","telephone":"203-594-5000","email":"","sameAs":"http://newcanaanlibrary.org"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/film-screening-black-panther-directed-by-ryan-coogler/"}},{"@context":"http://schema.org","@type":"Event","name":"HAYVN&#8217;s Entreprenurial Womens Collective lunch: Supercharge Your Social Media","description":"&lt;p&gt;hursday, February 20 \u00b7 12 - 1:30pm EST Location HAYVN 320 Boston Post Road Suite 180 Darien, CT 06820 Show map Refund Policy No Refunds About this event Entrepreneurial Women\u2019s Collective (EWC) Luncheon In-Person Event Connect with smart, supportive entrepreneurial women, learn new things, build relationships, and have fun. Please join us for this exciting [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/hayvns-entreprenurial-womens-collective-lunch-supercharge-your-social-media/","startDate":"2025-02-20T12:00:00-05:00","endDate":"2025-02-20T13:30:00-05:00","location":{"@type":"Place","name":"HAYVN","description":"","url":"https://newcanaanite.com/venue/hayvn-2","address":{"@type":"PostalAddress","streetAddress":"320 Boston Post Rd","addressLocality":"Darien","addressRegion":"CT","postalCode":"06820"},"telephone":"833.429.8659","sameAs":"hayvn.com"},"organizer":{"@type":"Person","name":"HAYVN","description":"","url":"https://newcanaanite.com/organizer/hayvn-2","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"25 \u2013 50","url":"https://newcanaanite.com/new-canaan-event/hayvns-entreprenurial-womens-collective-lunch-supercharge-your-social-media/"}},{"@context":"http://schema.org","@type":"Event","name":"Men\u2019s Club sets classical musical performance for Friday; Invites public","description":"&lt;p&gt;The New Canaan Men\u2019s Club will have a notable change from its regular programming at its meeting February 21 when it hosts Jonathan Yates, musical director and conductor of the Norwalk Symphony, and Marina Kitaychik, a violinist with the symphony and music educator, for a performance and remarks about the orchestra, now in its 80th [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/mens-club-sets-classical-musical-performance-for-friday-invites-public/","startDate":"2025-02-21T10:30:00-05:00","endDate":"2025-02-21T11:30:00-05:00","location":{"@type":"Place","name":"St. Mark&#8217;s Episcopal Church","description":"","url":"https://newcanaanite.com/venue/st-marks-episcopal-church","address":{"@type":"PostalAddress","streetAddress":"111 Oenoke Ridge Road","addressLocality":"New Canaan,","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.146763,"longitude":-73.494844499999999},"telephone":"203.966.4515","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"American and International Contemporary Organ Music Concert","description":"&lt;p&gt;Carson Cooman, Organist and Composer in Residence at the Memorial Church of Harvard University, will present a special program of American and international contemporary organ music at St. Michael\u2019s Lutheran Church in New Canaan, Connecticut, on February 21 at 7 pm.\u00a0 Carson Cooman, Organist and Composer in Residence at Harvard University Chapel, will present a [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/american-and-international-contemporary-organ-music-concert/","startDate":"2025-02-21T19:00:00-05:00","endDate":"2025-02-21T20:30:00-05:00","location":{"@type":"Place","name":"St. Michael&#8217;s Lutheran Church","description":"","url":"https://newcanaanite.com/venue/st-michaels-lutheran-church-3","address":{"@type":"PostalAddress","streetAddress":"5 Oenoke Ridge","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.149760100000002,"longitude":-73.496054799999996},"telephone":"203-966-3913","sameAs":"www.stmichaelslutheran.org"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/american-and-international-contemporary-organ-music-concert/"}},{"@context":"http://schema.org","@type":"Event","name":"&#8216;Terra Nova&#8217; by Ted Tally","description":"&lt;p&gt;In the winter of 1911-12, five Englishmen and five Norwegians raced each other to the bottom of the Earth. Only the Norwegians returned. Terra Nova is the true story of Captain Scott\\'s expedition to the South Pole. The discovery that Amundsen has preceded him, the bravery and sufferings of his team, the self-sacrifice of Captain [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/terra-nova-by-ted-tally/2025-02-21/","startDate":"2025-02-21T19:30:00-05:00","endDate":"2025-02-21T21:30:00-05:00","location":{"@type":"Place","name":"Powerhouse Theatre in Waveny Park","description":"","url":"https://newcanaanite.com/venue/powerhouse-theatre-in-waveny-park","address":{"@type":"PostalAddress","streetAddress":"in Waveny Park","addressLocality":"New Canaan","postalCode":"06840","addressCountry":"United States"},"telephone":"","sameAs":"TPNC.org"},"organizer":{"@type":"Person","name":"The Town Players of New Canaan","description":"","url":"https://newcanaanite.com/organizer/the-town-players-of-new-canaan","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"25 \u2013 35","url":"https://newcanaanite.com/new-canaan-event/terra-nova-by-ted-tally/2025-02-21/"}},{"@context":"http://schema.org","@type":"Event","name":"WNG Monthly Networking Meeting","description":"&lt;p&gt;Topic: Reclaiming Creativity: A Blueprint for Women Ready to Rediscover Their Passion \ud83d\udcc5 Date: February 26, 2025 \u23f0 Time: 12:30 PM \u2013 1:30 PM EST \ud83d\udccd Location: Zoom (provided upon registration) About the Event: In a fast-paced, productivity-driven world, it\u2019s easy to lose touch with the unique parts of ourselves that bring joy, fulfillment, and [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/02/Screenshot-2025-02-02-at-2.03.36\u202fPM.png","url":"https://newcanaanite.com/new-canaan-event/wng-monthly-networking-meeting-2/","startDate":"2025-02-26T12:30:00-05:00","endDate":"2025-02-26T13:30:00-05:00","location":{"@type":"Place","name":"Zoom","description":"","url":"https://newcanaanite.com/venue/zoom-5","address":{"@type":"PostalAddress"},"telephone":"","sameAs":""},"organizer":{"@type":"Person","name":"Women&#8217;s Networking Group of Fairfield County","description":"","url":"https://newcanaanite.com/organizer/womens-networking-group-of-fairfield-county-3","telephone":"","email":"&#104;e&#108;&#108;o&#64;wng&#99;&#116;&#46;&#99;&#111;&#109;","sameAs":"http://www.wngct.com"},"offers":{"@type":"Offer","price":"50.00","url":"https://newcanaanite.com/new-canaan-event/wng-monthly-networking-meeting-2/"}},{"@context":"http://schema.org","@type":"Event","name":"Soul\u2022F\u00eate: A Celebration of Elevated Black Cuisine and Culture","description":"&lt;p&gt;Stand Together Against Racism (S.T.A.R.) is thrilled to announce the return of Soul\u2022F\u00eate: A Culinary Immersion, an exciting event to honor Black Excellence Month through the artistry of food and music. Back for its second edition, this year\u2019s celebration will take place on February 26th from 6:00 PM to 9:30 PM, offering attendees an opportunity [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/soul%e2%80%a2fete-a-celebration-of-elevated-black-cuisine-and-culture/","startDate":"2025-02-26T18:00:00-05:00","endDate":"2025-02-26T21:30:00-05:00","location":{"@type":"Place","name":"Carriage Barn Art Center","description":"","url":"https://newcanaanite.com/venue/carriage-barn-art-center","address":{"@type":"PostalAddress","streetAddress":"Waveny Park","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"geo":{"@type":"GeoCoordinates","latitude":41.123072999999998,"longitude":-73.490201600000006},"telephone":"203 972 1895","sameAs":"carriagebarn.org"},"organizer":{"@type":"Person","name":"Stand Together Against Racism (STAR)","description":"","url":"https://newcanaanite.com/organizer/stand-together-against-racism-star","telephone":"","email":"","sameAs":"https://www.facebook.com/STAR.CT.2020"},"offers":{"@type":"Offer","price":"162","url":"https://newcanaanite.com/new-canaan-event/soul%e2%80%a2fete-a-celebration-of-elevated-black-cuisine-and-culture/"}},{"@context":"http://schema.org","@type":"Event","name":"Preventing Cardiovascular Disease with Stamford Health","description":"&lt;p&gt;This presentation will cover various practical strategies to prevent cardiovascular disease and will include a broad discussion of diet/nutrition, exercise, and medications that could be used. This will also include a discussion about what factors influence a patient\u2019s risk of cardiovascular disease.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/preventing-cardiovascular-disease-with-stamford-health/","startDate":"2025-02-26T18:30:00-05:00","endDate":"2025-02-26T19:30:00-05:00","location":{"@type":"Place","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-14","address":{"@type":"PostalAddress","streetAddress":"151 Main Street","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840  ","addressCountry":"United States"},"telephone":"203-594-5000","sameAs":"newcanaanlibrary.org"},"organizer":{"@type":"Person","name":"New canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-5","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/preventing-cardiovascular-disease-with-stamford-health/"}},{"@context":"http://schema.org","@type":"Event","name":"Madness with Best-Selling Author Antonia Hylton in conversation with Heather Cabot","description":"&lt;p&gt;Widely listed as one of the best books of 2024, Madness tells the 93-year-old history of Crownsville Hospital, one of the last segregated asylums with surviving records and a campus that still stands in Anne Arundel County, Maryland. Award-winning journalist Antonia Hylton traces the legacy of slavery to the treatment of Black people\u2019s bodies and [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/madness-with-best-selling-author-antonia-hylton-in-conversation-with-heather-cabot/","startDate":"2025-02-27T19:00:00-05:00","endDate":"2025-02-27T20:00:00-05:00","location":{"@type":"Place","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-14","address":{"@type":"PostalAddress","streetAddress":"151 Main Street","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840  ","addressCountry":"United States"},"telephone":"203-594-5000","sameAs":"newcanaanlibrary.org"},"organizer":{"@type":"Person","name":"New canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-5","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/madness-with-best-selling-author-antonia-hylton-in-conversation-with-heather-cabot/"}},{"@context":"http://schema.org","@type":"Event","name":"Film Screening: Hidden Figures","description":"&lt;p&gt;Three female African-American mathematicians play a pivotal role in astronaut John Glenn\\'s launch into orbit, even as they encounter racial and gender discrimination at work.&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/film-screening-hidden-figures/","startDate":"2025-02-28T15:00:00-05:00","endDate":"2025-02-28T17:00:00-05:00","location":{"@type":"Place","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-14","address":{"@type":"PostalAddress","streetAddress":"151 Main Street","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840  ","addressCountry":"United States"},"telephone":"203-594-5000","sameAs":"newcanaanlibrary.org"},"organizer":{"@type":"Person","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-2","telephone":"203-594-5000","email":"","sameAs":"http://newcanaanlibrary.org"},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/film-screening-hidden-figures/"}},{"@context":"http://schema.org","@type":"Event","name":"Filmmaker and Producer Jake Gorst Presents the Remastered 1959 Classic &#8220;American Look&#8221;","description":"&lt;p&gt;This promotional film highlights the Chevrolet automobile line as a showcase of American industrial design and style. It features modern architecture, interiors, packaging, office equipment, and industrial machines, ending with a behind-the-scenes look at the creation of the 1959 Chevrolet Impala at General Motors\u2019 Technical Center in Warren, Michigan. The film emphasizes the abundance of [&hellip;]&lt;/p&gt;\\n","image":"https://newcanaanite.com/wp-content/uploads/2025/02/1959-chevrolet-impala-4-door-sport-sedan-1.jpeg","url":"https://newcanaanite.com/new-canaan-event/filmmaker-and-producer-jake-gorst-presents-the-remastered-1959-classic-american-look/","startDate":"2025-02-28T18:00:00-05:00","endDate":"2025-02-28T19:30:00-05:00","location":{"@type":"Place","name":"New Canaan Museum &amp; Historical Society","description":"","url":"https://newcanaanite.com/venue/new-canaan-museum-historical-society","address":{"@type":"PostalAddress","streetAddress":"13 Oenoke Ridge","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840","addressCountry":"United States"},"telephone":"201-966-1776","sameAs":"https://nchistory.org/"},"organizer":{"@type":"Person","name":"New Canaan Museum &amp; Historical Society","description":"","url":"https://newcanaanite.com/organizer/new-canaan-museum-historical-society","telephone":"203-966-1776","email":"&#105;&#110;&#102;&#111;&#64;nc&#104;&#105;story.or&#103;","sameAs":"https://nchistory.org/"},"offers":{"@type":"Offer","price":"Free \u2013 10","url":"https://newcanaanite.com/new-canaan-event/filmmaker-and-producer-jake-gorst-presents-the-remastered-1959-classic-american-look/"}},{"@context":"http://schema.org","@type":"Event","name":"Mini Golf at the Library","description":"&lt;p&gt;Bring your whole family during our tee times to play Mini Golf and Support the Library! Snag your tickets now to tee off among the stacks. Our 18-hole course will take you all around the library and we\\'ll have fun prizes for you to win. New Canaan\\'s favorite Apple Cart Food Co. will be selling [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/mini-golf-at-the-library/","startDate":"2025-02-28T18:00:00-05:00","endDate":"2025-02-28T21:00:00-05:00","location":{"@type":"Place","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-14","address":{"@type":"PostalAddress","streetAddress":"151 Main Street","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840  ","addressCountry":"United States"},"telephone":"203-594-5000","sameAs":"newcanaanlibrary.org"},"organizer":{"@type":"Person","name":"New canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-5","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"10","url":"https://newcanaanite.com/new-canaan-event/mini-golf-at-the-library/"}},{"@context":"http://schema.org","@type":"Event","name":"Mini Golf at the Library","description":"&lt;p&gt;Bring your whole family during our tee times to play Mini Golf and Support the Library! Snag your tickets now to tee off among the stacks. Our 18-hole course will take you all around the library and we\\'ll have fun prizes for you to win. New Canaan\\'s favorite Apple Cart Food Co. will be selling [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/mini-golf-at-the-library-2/","startDate":"2025-03-01T10:00:00-05:00","endDate":"2025-03-01T15:00:00-05:00","location":{"@type":"Place","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-14","address":{"@type":"PostalAddress","streetAddress":"151 Main Street","addressLocality":"New Canaan","addressRegion":"CT","postalCode":"06840  ","addressCountry":"United States"},"telephone":"203-594-5000","sameAs":"newcanaanlibrary.org"},"organizer":{"@type":"Person","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-6","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"10","url":"https://newcanaanite.com/new-canaan-event/mini-golf-at-the-library-2/"}},{"@context":"http://schema.org","@type":"Event","name":"Storytelling with The Moth","description":"&lt;p&gt;Learn storytelling from the best in this introductory workshop with The Moth. Since its launch in New York City in 1997, The Moth has presented thousands of stories told live and without notes, renowned for the great range of human experience they showcase. In one 3-hour session, participants will learn The Moth\u2019s unique storytelling principles; [&hellip;]&lt;/p&gt;\\n","url":"https://newcanaanite.com/new-canaan-event/storytelling-with-the-moth/","startDate":"2025-03-01T14:00:00-05:00","endDate":"2025-03-01T17:00:00-05:00","location":{"@type":"Place","name":"New Canaan Library","description":"","url":"https://newcanaanite.com/venue/new-canaan-library-16","address":{"@type":"PostalAddress","addressCountry":"United States"},"telephone":"","sameAs":"newcanaanlibrary.org"},"organizer":{"@type":"Person","name":"New canaan Library","description":"","url":"https://newcanaanite.com/organizer/new-canaan-library-5","telephone":"","email":"","sameAs":""},"offers":{"@type":"Offer","price":"0","url":"https://newcanaanite.com/new-canaan-event/storytelling-with-the-moth/"}}]
+Tue
+18
+Lunch & Learn: Clothing Historian Charlotte Engel Ellis
+February 18 @ 12:00 pm
+-
+1:00 pm
+Wed
+19
+Film Screening: ‘Black Panther’ Directed by Ryan Coogler
+February 19 @ 5:00 pm
+-
+8:00 pm
+Thu
+20
+HAYVN’s Entreprenurial Womens Collective lunch: Supercharge Your Social Media
+February 20 @ 12:00 pm
+-
+1:30 pm
+Most-Read Past Month
+New Canaan Woman Charged After Fleeing Scene of Car Crash
+Police: SUV with Dog Inside Stolen Midday Sunday in Downtown New Canaan
+New Canaan Man, 39, Charged with Assault, Resisting
+Did You Hear … ?
+‘Badass Bagels’ Is Coming to Burtis Avenue
+New Canaan Woman, 48, Charged with Violation of a Protective Order
+Did You Hear … ?
+Did You Hear … ?
+Police: Stolen Bulldog ‘Poppy’ Safely Returned to New Canaan Family
+Sunset Hill Road Home Sells for $3.9 Million
+This Is Us
+About Us
+Our Team
+In the News
+Contact
+Follow
+Like Us on Facebook
+Follow Us on Twitter
+Follow Us on YouTube
+Follow Us on Instagram
+Subscribe via RSS
+Archives
+Archives
+Select Month
+February 2025
+January 2025
+December 2024
+November 2024
+October 2024
+September 2024
+August 2024
+July 2024
+June 2024
+May 2024
+April 2024
+March 2024
+February 2024
+January 2024
+December 2023
+November 2023
+October 2023
+September 2023
+August 2023
+July 2023
+June 2023
+May 2023
+April 2023
+March 2023
+February 2023
+January 2023
+December 2022
+November 2022
+October 2022
+September 2022
+August 2022
+July 2022
+June 2022
+May 2022
+April 2022
+March 2022
+February 2022
+January 2022
+December 2021
+November 2021
+October 2021
+September 2021
+August 2021
+July 2021
+June 2021
+May 2021
+April 2021
+March 2021
+February 2021
+January 2021
+December 2020
+November 2020
+October 2020
+September 2020
+August 2020
+July 2020
+June 2020
+May 2020
+April 2020
+March 2020
+February 2020
+January 2020
+December 2019
+November 2019
+October 2019
+September 2019
+August 2019
+July 2019
+June 2019
+May 2019
+April 2019
+March 2019
+February 2019
+January 2019
+December 2018
+November 2018
+October 2018
+September 2018
+August 2018
+July 2018
+June 2018
+May 2018
+April 2018
+March 2018
+February 2018
+January 2018
+December 2017
+November 2017
+October 2017
+September 2017
+August 2017
+July 2017
+June 2017
+May 2017
+April 2017
+March 2017
+February 2017
+January 2017
+December 2016
+November 2016
+October 2016
+September 2016
+August 2016
+July 2016
+June 2016
+May 2016
+April 2016
+March 2016
+February 2016
+January 2016
+December 2015
+November 2015
+October 2015
+September 2015
+August 2015
+July 2015
+June 2015
+May 2015
+April 2015
+March 2015
+February 2015
+January 2015
+December 2014
+November 2014
+October 2014
+September 2014
+August 2014
+July 2014
+June 2014
+May 2014
+April 2014
+March 2014
+February 2014
+Helpful Links
+NewCanaanite.com
+Town of New Canaan
+New Canaan Public Schools
+New Canaan Library
+New Canaan Chamber of Commerce
+New Canaan Police Department
+New Canaan Fire Co. No. 1
+New Canaan Land Trust
+New Canaan Office of Emergency Management
+New Canaan Nature Center
+New Canaan Historical Society
+Drug Free New Canaan
+We Like
+Darienite
+Greenwich Free Press
+Good Morning Wilton
+The Monroe Sun
+Our Newshounds
+Dexter & Wallace
+© Copyright 2025, Newshound LLC. Reproduction of material from any NewCanaanite.com pages without written permission is strictly prohibited. All rights reserved. Newshound LLC is a registered LLC in the state of Connecticut.
+About Us
+Our Team
+In the News
+Contact
+Built with the
+Largo WordPress Theme
+from the
+Institute for Nonprofit News
+.
+Back to top ↑
+window.broadstreetKeywords = ['not_home_page','not_landing_page','is_article_page','upcoming-events']
+window.broadstreetTargets = {"pagetype":["not_home_page"],"category":["upcoming-events"],"url":"upcoming-events"};
+if (broadstreet) broadstreet.watch({});
+( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+/* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done"}};var tribe_system_info = {"sysinfo_optin_nonce":"d3aed7804f","clipboard_btn_text":"Copy to clipboard","clipboard_copied_text":"System info copied","clipboard_fail_text":"Press \"Cmd + C\" to copy"};/* ]]> */
+/* <![CDATA[ */
+var Largo = {"is_home":"","is_single":"1","sticky_nav_options":{"sticky_nav_display":true,"main_nav_hide_article":false,"nav_overflow_label":"More"}};
+/* ]]> */
+/* <![CDATA[ */
+var TribeList = {"ajaxurl":"https:\/\/newcanaanite.com\/wp-admin\/admin-ajax.php","tribe_paged":"0"};
+/* ]]> */
+/* <![CDATA[ */
+var TribeMiniCalendar = {"ajaxurl":"https:\/\/newcanaanite.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+/* <![CDATA[ */
+var TribeCalendar = {"ajaxurl":"https:\/\/newcanaanite.com\/wp-admin\/admin-ajax.php","post_type":"tribe_events"};
+/* ]]> */

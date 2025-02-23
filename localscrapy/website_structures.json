@@ -1,0 +1,159 @@
+{
+  "newcanaan": {
+    "Our town": {
+      "url": "https://connectnewcanaan.com/our-news/",
+      "domain": "connectnewcanaan.com",
+      "hub": "newcanaan",
+      "name": "Our town",
+      "platform": "wordpress",
+      "selectors": {
+        "title": "h2 a",
+        "date": ".post-date",
+        "content_preview": "p"
+      },
+      "sample_data": [
+        {
+          "title": "Meet Our Members Breakfast",
+          "url": "https://connectnewcanaan.com/meet-our-members-breakfast/",
+          "content_preview": "Wednesday, February 14th, 8:00 AMGates Restaurant, 10 Forest Street$42 per person Register Now \u201c*\u201d indicates required fields Step 1 of 3 33% Name* First Last Business Name* Email* Enter Email Confirm Email Primary Attendee Price: Add Guest(s) Add a Guest(s) Name Guest Ticket Actions \u00a0 \u00a0 Edit Delete <tbody data-bind=\u201dvisible: entries().length <tr class=\u201dgpnf-no-entries\u201d data-bind=\u201dvisible: entries().length [\u2026]"
+        },
+        {
+          "title": "Woman\u2019s Networking November 15th Sponsored by HTG Investment Advisors",
+          "url": "https://connectnewcanaan.com/womans-networking-november-15th-sponsored-by-htg-investment-advisors/",
+          "content_preview": "Please join us for our final Woman\u2019s Networking Event of 2023 Wednesday November 15th at Kinney Lane Foods. Owner Rachael Mahoney will treat us to samples of her delicious chef-driven healthy pre-prepared meals. We will also learn about simple anti-inflammatory diet/lifestyle strategies to clean upyour gut while sipping on gut-healing homemade bone broth from KinneyLane. [\u2026]"
+        },
+        {
+          "title": "Be a part of the Downtown Holiday Spirit in New Canaan!",
+          "url": "https://connectnewcanaan.com/be-a-part-of-the-downtown-holiday-spirit-in-new-canaan/",
+          "content_preview": "/*! elementor \u2013 v3.6.5 \u2013 27-04-2022 */ .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#818a91;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#818a91;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block} Any Business or Family can be a Sponsor! Each one of the 75+ lampposts in Downtown New Canaan will be decorated with green garland, white lights and and an individualized name tag tied with a bright red bow. For $200, [\u2026]"
+        }
+      ],
+      "detected_at": "2025-02-23T18:19:05.352082"
+    },
+    "New Canaan Cares": {
+      "url": "https://newcanaancares.org/news/",
+      "domain": "newcanaancares.org",
+      "hub": "newcanaan",
+      "name": "New Canaan Cares",
+      "platform": "wordpress",
+      "selectors": {
+        "article_item": "article",
+        "title": "h2 a",
+        "content_preview": "p"
+      },
+      "sample_data": [
+        {
+          "title": "Managing Emotions in Masked Times",
+          "url": "https://newcanaancares.org/managing-emotions-in-masked-times/"
+        }
+      ],
+      "detected_at": "2025-02-23T18:19:05.380115"
+    },
+    "New Canaan YMCA": {
+      "url": "https://newcanaanymca.org/news/",
+      "domain": "newcanaanymca.org",
+      "hub": "newcanaan",
+      "name": "New Canaan YMCA",
+      "platform": "wordpress",
+      "selectors": {
+        "article_item": "article",
+        "title": "h2 a",
+        "content_preview": "p"
+      },
+      "sample_data": [
+        {
+          "title": "New Canaan YMCA Named Employer of the Year by STAR Inc.",
+          "url": "https://newcanaanymca.org/new-canaan-ymca-named-employer-of-the-year-by-star-inc/"
+        },
+        {
+          "title": "New Canaan YMCA & Metropolitan Golf Association Partner to Host Adaptive Golf Clinic",
+          "url": "https://newcanaanymca.org/new-canaan-ymca-metropolitan-golf-association-partner-to-host-adaptive-golf-clinic/"
+        },
+        {
+          "title": "New Canaan YMCA Financial Assistance Program Adapts to Meet Community Need",
+          "url": "https://newcanaanymca.org/new-canaan-ymca-financial-assistance-program-adapts-to-meet-community-need/"
+        }
+      ],
+      "detected_at": "2025-02-23T18:19:05.416727"
+    },
+    "Wavenly Park Conservancy": {
+      "url": "https://wavenyparkconservancy.org/",
+      "domain": "wavenyparkconservancy.org",
+      "hub": "newcanaan",
+      "name": "Wavenly Park Conservancy",
+      "platform": "wordpress",
+      "selectors": {
+        "article_item": "article",
+        "title": "h2 a",
+        "content_preview": "p"
+      },
+      "sample_data": [
+        {
+          "title": "Woodland Restoration Underway!",
+          "url": "https://wavenyparkconservancy.org/woodland-restoration-underway/"
+        },
+        {
+          "title": "Holiday Appeal Coming Your Way!",
+          "url": "https://wavenyparkconservancy.org/holiday-appeal-coming-your-way/"
+        },
+        {
+          "title": "Third Benchmark Has Arrived!",
+          "url": "https://wavenyparkconservancy.org/third-benchmark-has-arrived/"
+        }
+      ],
+      "detected_at": "2025-02-23T18:19:05.453739"
+    },
+    "New Canaan Public Schools": {
+      "url": "https://www.ncps-k12.org/news",
+      "domain": "www.ncps-k12.org",
+      "hub": "newcanaan",
+      "name": "New Canaan Public Schools",
+      "platform": "wordpress",
+      "selectors": {
+        "title": "h2 a",
+        "content_preview": "p"
+      },
+      "sample_data": [
+        {
+          "title": "VPA Collaborative Concert - February 11th @ 7pm",
+          "url": "https://www.ncps-k12.org/article/2024285"
+        },
+        {
+          "title": "NCHS Students Shine at 2025 Connecticut Regional Scholastic Art Exhibition",
+          "url": "https://www.ncps-k12.org/article/1997759"
+        },
+        {
+          "title": "SAT Tutoring w/ NCCF Grant",
+          "url": "https://www.ncps-k12.org/article/1951770"
+        }
+      ],
+      "detected_at": "2025-02-23T18:19:05.811167"
+    },
+    "New Canaan High School": {
+      "url": "https://www.ncps-k12.org/o/nchs/news",
+      "domain": "www.ncps-k12.org",
+      "hub": "newcanaan",
+      "name": "New Canaan High School",
+      "platform": "wordpress",
+      "selectors": {
+        "title": "h2 a",
+        "content_preview": "p"
+      },
+      "sample_data": [
+        {
+          "title": "College Essay Workshop - March 27th + April 10th",
+          "url": "https://www.ncps-k12.org/o/nchs/article/2020409"
+        },
+        {
+          "title": "NCHS Students Shine at 2025 Connecticut Regional Scholastic Art Exhibition",
+          "url": "https://www.ncps-k12.org/o/nchs/article/1997760"
+        },
+        {
+          "title": "SAT Tutoring w/ NCCF Grant",
+          "url": "https://www.ncps-k12.org/o/nchs/article/1951768"
+        }
+      ],
+      "detected_at": "2025-02-23T18:19:05.850474"
+    }
+  }
+}
