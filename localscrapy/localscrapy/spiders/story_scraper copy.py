@@ -5,7 +5,6 @@ from datetime import datetime
 from urllib.parse import urljoin
 from localscrapy.items import StoryItem
 from collections import defaultdict
-import re
 
 class StoryScraperSpider(scrapy.Spider):
     name = 'story_scraper'
@@ -187,9 +186,6 @@ class StoryScraperSpider(scrapy.Spider):
             initial_data = response.meta['initial_data']
             hub = response.meta['hub']
             
-            # For debugging - analyze page structure
-            self.analyze_page_structure(response, site_name)
-            
             # Extract content using a cascading approach for robustness
             
             # 1. Extract date
@@ -201,28 +197,20 @@ class StoryScraperSpider(scrapy.Spider):
             # 3. Extract full content
             full_content = self.extract_full_content(response, selectors, platform)
             
-            # Debug output for content extraction
-            if full_content:
-                self.logger.info(f"Successfully extracted full content: {len(full_content)} paragraphs")
-            else:
-                self.logger.warning(f"Failed to extract content with standard methods for {site_name} at {response.url}")
-                # Try more aggressive content extraction methods
-                full_content = self.extract_deep_content(response, site_name)
-                if full_content:
-                    self.logger.info(f"Extracted content using deep extraction: {len(full_content)} paragraphs")
-            
             # 4. Extract images
             images = self.extract_images(response, selectors, platform)
             
-            # Debug output for image extraction
-            if images:
-                self.logger.info(f"Successfully extracted images: {len(images)} images")
-            else:
-                self.logger.warning(f"Failed to extract images for {site_name} at {response.url}")
-                # Try more aggressive image extraction methods
-                images = self.extract_deep_images(response, site_name)
+            # Adaptive fallback: If we have no full content but the page has content
+            if not full_content:
+                full_content = self.extract_any_content(response)
+                if full_content:
+                    self.logger.info("Using fallback content extraction")
+            
+            # Adaptive fallback: If we have no images but the page has images
+            if not images:
+                images = self.extract_any_images(response)
                 if images:
-                    self.logger.info(f"Extracted images using deep extraction: {len(images)} images")
+                    self.logger.info("Using fallback image extraction")
             
             # Create StoryItem
             story_item = StoryItem(
@@ -249,35 +237,6 @@ class StoryScraperSpider(scrapy.Spider):
         except Exception as e:
             self.logger.error(f"Error parsing full story from {response.url}: {str(e)}")
     
-    def analyze_page_structure(self, response, site_name):
-        """Analyze page structure to aid debugging"""
-        # For problematic sites like YMCA, perform detailed analysis
-        if site_name == "New Canaan YMCA" or True:  # Always analyze for debugging
-            # Count the paragraphs
-            paragraphs = response.css('p')
-            self.logger.info(f"Found {len(paragraphs)} paragraphs on page")
-            
-            # Look for common containers
-            for container in ['article', '.post', '.entry', '.content', '.main', '.page', '.story']:
-                elements = response.css(container)
-                if elements:
-                    self.logger.info(f"Found {len(elements)} '{container}' elements on page")
-            
-            # Check body classes for clues
-            body_classes = response.css('body::attr(class)').get()
-            if body_classes:
-                self.logger.info(f"Body classes: {body_classes}")
-                
-            # Check for iframes that might contain content
-            iframes = response.css('iframe')
-            if iframes:
-                self.logger.info(f"Found {len(iframes)} iframes on page")
-                
-            # Look for script blocks that might be loading content dynamically
-            scripts = response.css('script:contains("var")')
-            if scripts:
-                self.logger.info(f"Found {len(scripts)} scripts with variables on page")
-    
     def extract_date(self, response, selectors):
         """Extract date using multiple approaches"""
         date = None
@@ -294,7 +253,7 @@ class StoryScraperSpider(scrapy.Spider):
         for date_sel in [
             'time::text', '.date::text', '.published::text', '.post-date::text',
             'meta[property="article:published_time"]::attr(content)',
-            '.entry-date::text', '.meta-date::text', '.post-meta::text'
+            '.entry-date::text', '.meta-date::text'
         ]:
             date_elements = self.safe_css(response, date_sel)
             if date_elements:
@@ -352,7 +311,7 @@ class StoryScraperSpider(scrapy.Spider):
         for content_sel in [
             '.article p::text', '.post p::text', '.content p::text', 
             '.story p::text', '.entry p::text', '.body p::text',
-            'article p::text', '.main-content p::text', 'p::text'
+            'article p::text', '.main-content p::text'
         ]:
             content_elements = self.safe_css(response, content_sel).getall()
             if content_elements:
@@ -362,59 +321,6 @@ class StoryScraperSpider(scrapy.Spider):
                     return full_content
         
         return full_content
-    
-    def extract_deep_content(self, response, site_name):
-        """Aggressive content extraction for difficult sites"""
-        # Try to find any paragraphs with meaningful content
-        all_paragraphs = self.safe_css(response, "p::text").getall()
-        
-        # Debug output
-        sample_paragraphs = all_paragraphs[:3] if all_paragraphs else []
-        self.logger.info(f"Deep extraction found {len(all_paragraphs)} paragraph texts. Sample: {sample_paragraphs}")
-        
-        # Filter out empty or very short paragraphs and copyright notices
-        content = [p.strip() for p in all_paragraphs if 
-                  p.strip() and 
-                  len(p.strip()) > 20 and 
-                  not p.strip().lower().startswith('copyright') and
-                  not p.strip().lower().startswith('©')]
-        
-        # If we found real content, return it
-        if content:
-            return content
-        
-        # Try direct HTML parsing for YMCA site or other problematic sites
-        if site_name == "New Canaan YMCA" or not content:
-            # Try to extract directly from HTML
-            html_content = response.body.decode('utf-8')
-            
-            # Look for content between paragraph tags
-            p_tags = re.findall(r'<p[^>]*>(.*?)<\/p>', html_content, re.DOTALL)
-            if p_tags:
-                # Clean the content
-                cleaned_content = []
-                for p in p_tags:
-                    # Remove HTML tags
-                    clean_p = re.sub(r'<[^>]+>', '', p).strip()
-                    if clean_p and len(clean_p) > 20:
-                        cleaned_content.append(clean_p)
-                
-                if cleaned_content:
-                    self.logger.info(f"Extracted {len(cleaned_content)} paragraphs from HTML parsing")
-                    return cleaned_content
-        
-        # As a last resort, try to get any text blocks
-        content_blocks = []
-        for sel in [
-            'div::text', 'section::text', 'article::text', 
-            '.content::text', '.body::text', '.main::text'
-        ]:
-            blocks = self.safe_css(response, sel).getall()
-            blocks = [b.strip() for b in blocks if b.strip() and len(b.strip()) > 40]
-            if blocks:
-                content_blocks.extend(blocks)
-        
-        return content_blocks
     
     def extract_images(self, response, selectors, platform):
         """Extract images using multiple approaches"""
@@ -455,8 +361,7 @@ class StoryScraperSpider(scrapy.Spider):
         # 3. Try common image selectors
         for img_sel in [
             'figure img', '.image img', '.media img', '.wp-post-image',
-            '.featured-image img', '.article-image img', '.content img',
-            'img.size-full', 'img.size-large', 'img.attachment-large', 'img'
+            '.featured-image img', '.article-image img', '.content img'
         ]:
             image_elements = self.safe_css(response, img_sel)
             for img in image_elements:
@@ -474,40 +379,41 @@ class StoryScraperSpider(scrapy.Spider):
         
         return images
     
-    def extract_deep_images(self, response, site_name):
-        """Aggressive image extraction for difficult sites"""
+    def extract_any_content(self, response):
+        """Fallback method to extract any paragraph text from the page"""
+        # Try to find any paragraphs with meaningful content
+        all_paragraphs = self.safe_css(response, "p::text").getall()
+        
+        # Filter out empty or very short paragraphs and copyright notices
+        content = [p.strip() for p in all_paragraphs if 
+                  p.strip() and 
+                  len(p.strip()) > 20 and 
+                  not p.strip().lower().startswith('copyright') and
+                  not p.strip().lower().startswith('©')]
+        
+        # If we found real content, return it
+        if content:
+            return content
+        
+        # As a last resort, try to get any text blocks
+        content_blocks = []
+        for sel in [
+            'div::text', 'section::text', 'article::text', 
+            '.content::text', '.body::text', '.main::text'
+        ]:
+            blocks = self.safe_css(response, sel).getall()
+            blocks = [b.strip() for b in blocks if b.strip() and len(b.strip()) > 40]
+            if blocks:
+                content_blocks.extend(blocks)
+        
+        return content_blocks
+    
+    def extract_any_images(self, response):
+        """Fallback method to extract any meaningful images from the page"""
         images = []
         
         # Get all images on the page
         all_images = self.safe_css(response, "img")
-        
-        # Debug
-        self.logger.info(f"Deep image extraction found {len(all_images)} img tags")
-        
-        # Try direct HTML parsing for problematic sites
-        if site_name == "New Canaan YMCA" or not all_images:
-            # Try to extract directly from HTML
-            html_content = response.body.decode('utf-8')
-            
-            # Look for img tags with src attributes
-            img_tags = re.findall(r'<img[^>]*src=[\'"](.*?)[\'"][^>]*>', html_content)
-            if img_tags:
-                for src in img_tags:
-                    # Skip tiny images, icons, logos, etc.
-                    if (not src.endswith('.ico') and
-                        'logo' not in src.lower() and
-                        'icon' not in src.lower() and
-                        'avatar' not in src.lower()):
-                        
-                        image_url = urljoin(response.url, src)
-                        images.append({
-                            'url': image_url,
-                            'alt_text': ''
-                        })
-                
-                if images:
-                    self.logger.info(f"Extracted {len(images)} images from HTML parsing")
-                    return images
         
         # Filter to likely content images (skip tiny images, logos, icons)
         for img in all_images:

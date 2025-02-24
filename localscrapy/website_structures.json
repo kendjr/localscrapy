@@ -1,5 +1,81 @@
 {
   "newcanaan": {
+    "New Canaan Community Foundation": {
+      "url": "https://www.newcanaancf.org/whats-happening",
+      "domain": "www.newcanaancf.org",
+      "hub": "newcanaan",
+      "name": "New Canaan Community Foundation",
+      "platform": "squarespace",
+      "selectors": {
+        "article_item": "article",
+        "date": "time",
+        "content_preview": "p"
+      },
+      "sample_data": [],
+      "detected_at": "2025-02-24T11:14:05.776991"
+    },
+    "Wavenly Park Conservancy": {
+      "url": "https://wavenyparkconservancy.org/",
+      "domain": "wavenyparkconservancy.org",
+      "hub": "newcanaan",
+      "name": "Wavenly Park Conservancy",
+      "platform": "wordpress",
+      "selectors": {
+        "article_item": "article",
+        "title": "h2 a",
+        "content_preview": "p",
+        "story_content": "article p",
+        "image": "article img"
+      },
+      "sample_data": [
+        {
+          "title": "Woodland Restoration Underway!",
+          "url": "https://wavenyparkconservancy.org/woodland-restoration-underway/",
+          "full_content": "Woodlands restoration at Waveny Park is underway. The project has been in the planning for the past 18 months and is expected to continue through the next several years. Invasive and undesirable plants and shrubs will be removed from the understory to encourage the growth of native species that are typically present in a healthy Connecticut woodland. The Conservancy is funding this work with a major grant from the Jeniam Foundation. \u00a0 Your financial contribution to the Waveny Park Conservancy is",
+          "image_urls": [
+            "data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 608 608'%2F%3E",
+            "https://secure.gravatar.com/avatar/9c6e8b9f403529e87e59609afab8a663?s=57&d=mm&r=g",
+            "data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1134 1134'%2F%3E"
+          ]
+        },
+        {
+          "title": "Holiday Appeal Coming Your Way!",
+          "url": "https://wavenyparkconservancy.org/holiday-appeal-coming-your-way/"
+        },
+        {
+          "title": "Third Benchmark Has Arrived!",
+          "url": "https://wavenyparkconservancy.org/third-benchmark-has-arrived/"
+        }
+      ],
+      "detected_at": "2025-02-24T11:14:06.025971"
+    },
+    "New Canaan Cares": {
+      "url": "https://newcanaancares.org/news/",
+      "domain": "newcanaancares.app.neoncrm.com",
+      "hub": "newcanaan",
+      "name": "New Canaan Cares",
+      "platform": "unknown",
+      "selectors": {
+        "article_item": "article",
+        "title": "h2 a",
+        "content_preview": "p"
+      },
+      "sample_data": [
+        {
+          "title": "NEWSLETTER SIGNUP",
+          "url": "https://newcanaancares.app.neoncrm.com/np/clients/newcanaancares/subscribe.jsp?subscription=38&"
+        },
+        {
+          "title": "NEWSLETTER SIGNUP",
+          "url": "https://newcanaancares.org/news/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjgwNjkiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D"
+        },
+        {
+          "title": "Managing Emotions in Masked Times",
+          "url": "https://newcanaancares.org/managing-emotions-in-masked-times/"
+        }
+      ],
+      "detected_at": "2025-02-24T11:14:06.780836"
+    },
     "Our town": {
       "url": "https://connectnewcanaan.com/our-news/",
       "domain": "connectnewcanaan.com",
@@ -14,40 +90,18 @@
       "sample_data": [
         {
           "title": "Meet Our Members Breakfast",
-          "url": "https://connectnewcanaan.com/meet-our-members-breakfast/",
-          "content_preview": "Wednesday, February 14th, 8:00 AMGates Restaurant, 10 Forest Street$42 per person Register Now \u201c*\u201d indicates required fields Step 1 of 3 33% Name* First Last Business Name* Email* Enter Email Confirm Email Primary Attendee Price: Add Guest(s) Add a Guest(s) Name Guest Ticket Actions \u00a0 \u00a0 Edit Delete <tbody data-bind=\u201dvisible: entries().length <tr class=\u201dgpnf-no-entries\u201d data-bind=\u201dvisible: entries().length [\u2026]"
+          "url": "https://connectnewcanaan.com/meet-our-members-breakfast/"
         },
         {
           "title": "Woman\u2019s Networking November 15th Sponsored by HTG Investment Advisors",
-          "url": "https://connectnewcanaan.com/womans-networking-november-15th-sponsored-by-htg-investment-advisors/",
-          "content_preview": "Please join us for our final Woman\u2019s Networking Event of 2023 Wednesday November 15th at Kinney Lane Foods. Owner Rachael Mahoney will treat us to samples of her delicious chef-driven healthy pre-prepared meals. We will also learn about simple anti-inflammatory diet/lifestyle strategies to clean upyour gut while sipping on gut-healing homemade bone broth from KinneyLane. [\u2026]"
+          "url": "https://connectnewcanaan.com/womans-networking-november-15th-sponsored-by-htg-investment-advisors/"
         },
         {
           "title": "Be a part of the Downtown Holiday Spirit in New Canaan!",
-          "url": "https://connectnewcanaan.com/be-a-part-of-the-downtown-holiday-spirit-in-new-canaan/",
-          "content_preview": "/*! elementor \u2013 v3.6.5 \u2013 27-04-2022 */ .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#818a91;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#818a91;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block} Any Business or Family can be a Sponsor! Each one of the 75+ lampposts in Downtown New Canaan will be decorated with green garland, white lights and and an individualized name tag tied with a bright red bow. For $200, [\u2026]"
+          "url": "https://connectnewcanaan.com/be-a-part-of-the-downtown-holiday-spirit-in-new-canaan/"
         }
       ],
-      "detected_at": "2025-02-23T18:19:05.352082"
-    },
-    "New Canaan Cares": {
-      "url": "https://newcanaancares.org/news/",
-      "domain": "newcanaancares.org",
-      "hub": "newcanaan",
-      "name": "New Canaan Cares",
-      "platform": "wordpress",
-      "selectors": {
-        "article_item": "article",
-        "title": "h2 a",
-        "content_preview": "p"
-      },
-      "sample_data": [
-        {
-          "title": "Managing Emotions in Masked Times",
-          "url": "https://newcanaancares.org/managing-emotions-in-masked-times/"
-        }
-      ],
-      "detected_at": "2025-02-23T18:19:05.380115"
+      "detected_at": "2025-02-24T11:14:06.794228"
     },
     "New Canaan YMCA": {
       "url": "https://newcanaanymca.org/news/",
@@ -74,49 +128,87 @@
           "url": "https://newcanaanymca.org/new-canaan-ymca-financial-assistance-program-adapts-to-meet-community-need/"
         }
       ],
-      "detected_at": "2025-02-23T18:19:05.416727"
+      "detected_at": "2025-02-24T11:14:06.897143"
     },
-    "Wavenly Park Conservancy": {
-      "url": "https://wavenyparkconservancy.org/",
-      "domain": "wavenyparkconservancy.org",
+    "Town of New Canaan": {
+      "url": "https://www.newcanaan.info/newslist.php",
+      "domain": "www.wavenyhouseevents.com",
       "hub": "newcanaan",
-      "name": "Wavenly Park Conservancy",
-      "platform": "wordpress",
+      "name": "Town of New Canaan",
+      "platform": "squarespace",
       "selectors": {
-        "article_item": "article",
-        "title": "h2 a",
-        "content_preview": "p"
+        "title": "a[href*=\"story\"]",
+        "story_content": "article p",
+        "image": "article img"
       },
       "sample_data": [
         {
-          "title": "Woodland Restoration Underway!",
-          "url": "https://wavenyparkconservancy.org/woodland-restoration-underway/"
-        },
-        {
-          "title": "Holiday Appeal Coming Your Way!",
-          "url": "https://wavenyparkconservancy.org/holiday-appeal-coming-your-way/"
-        },
-        {
-          "title": "Third Benchmark Has Arrived!",
-          "url": "https://wavenyparkconservancy.org/third-benchmark-has-arrived/"
+          "title": "Waveny House",
+          "url": "https://www.wavenyhouseevents.com/history",
+          "full_content": "Waveny Park in New Canaan, Connecticut was originally a grand summer estate owned by Thomas Wells Hall from 1894 to 1904. The Carriage Barn and Powerhouse were built during this period. In 1904, Lewis Henry Lapham, a co-founder of the Texaco Oil Company, bought the property as a summer estate from Hall, and expanded it from 280 acres to 450 acres.\u00a0\u00a0 Lapham tore down Hall's house and had a new one built in 1912 by the renowned architect William B. Tubby of Greenwich. The new house was named Waven",
+          "image_urls": [
+            "https://images.squarespace-cdn.com/content/v1/6351526ec1f04a365a15cdf2/842a2d2a-d26f-47ab-941f-f7e6c4c2b318/Screen+Shot+2022-10-21+at+3.40.30+PM.jpg",
+            "https://images.squarespace-cdn.com/content/v1/6351526ec1f04a365a15cdf2/7a312dc6-7e6b-42b9-b1ea-8b5f5e11b391/Screen+Shot+2022-11-30+at+9.17.59+AM.png",
+            "https://images.squarespace-cdn.com/content/v1/6351526ec1f04a365a15cdf2/51472cc3-7f52-47af-a50e-5a6cacf2db54/Screen+Shot+2022-11-30+at+9.18.11+AM.png"
+          ]
         }
       ],
-      "detected_at": "2025-02-23T18:19:05.453739"
+      "detected_at": "2025-02-24T11:14:08.246908"
+    },
+    "New Canaan High School": {
+      "url": "https://www.ncps-k12.org/o/nchs/news",
+      "domain": "www.ncps-k12.org",
+      "hub": "newcanaan",
+      "name": "New Canaan High School",
+      "platform": "unknown",
+      "selectors": {
+        "title": "h2 a",
+        "date": ".article-date",
+        "content_preview": "p",
+        "story_content": ".article-content p",
+        "image": ".article-image img"
+      },
+      "sample_data": [
+        {
+          "title": "Join Us for the Annual NC Color Drop \u2013 March 22 at Waveny Park!",
+          "url": "https://www.ncps-k12.org/o/nchs/article/2046076",
+          "full_content": "Mark your calendars for one of New Canaan\u2019s most exciting annual traditions\u2014the NC Color Drop! On Saturday, March 22, at 10:00 AM, a helicopter will soar over Waveny Park, releasing 2,000 numbered golf balls onto a target below. The participants whose golf balls land closest to the target will win one of 26 incredible prizes from local businesses, with the grand prize being a 2025 Chevy Colorado! Best of all, 100% of the proceeds support need-based college scholarships for NCHS graduates. Specta",
+          "image_urls": [
+            "https://core-docs.s3.amazonaws.com/_new_canaan_public_schools_ar/article/image/large_07edcf6e-270c-44af-8a67-73347dd1c6c7.png"
+          ]
+        },
+        {
+          "title": "College Essay Workshop - March 27th + April 10th",
+          "url": "https://www.ncps-k12.org/o/nchs/article/2020409"
+        },
+        {
+          "title": "NCHS Students Shine at 2025 Connecticut Regional Scholastic Art Exhibition",
+          "url": "https://www.ncps-k12.org/o/nchs/article/1997760"
+        }
+      ],
+      "detected_at": "2025-02-24T11:14:08.890116"
     },
     "New Canaan Public Schools": {
       "url": "https://www.ncps-k12.org/news",
       "domain": "www.ncps-k12.org",
       "hub": "newcanaan",
       "name": "New Canaan Public Schools",
-      "platform": "wordpress",
+      "platform": "unknown",
       "selectors": {
         "title": "h2 a",
-        "content_preview": "p"
+        "date": ".article-date",
+        "content_preview": "p",
+        "story_content": ".article-content p",
+        "image": ".article-image img"
       },
       "sample_data": [
         {
-          "title": "VPA Collaborative Concert - February 11th @ 7pm",
-          "url": "https://www.ncps-k12.org/article/2024285"
+          "title": "Join Us for the Annual NC Color Drop \u2013 March 22 at Waveny Park!",
+          "url": "https://www.ncps-k12.org/article/2046071",
+          "full_content": "Mark your calendars for one of New Canaan\u2019s most exciting annual traditions\u2014the NC Color Drop! On Saturday, March 22, at 10:00 AM, a helicopter will soar over Waveny Park, releasing 2,000 numbered golf balls onto a target below. The participants whose golf balls land closest to the target will win one of 26 incredible prizes from local businesses, with the grand prize being a 2025 Chevy Colorado! Best of all, 100% of the proceeds support need-based college scholarships for NCHS graduates. Specta",
+          "image_urls": [
+            "https://core-docs.s3.amazonaws.com/_new_canaan_public_schools_ar/article/image/large_70630351-6834-4898-8f5a-bf8e219df00b.png"
+          ]
         },
         {
           "title": "NCHS Students Shine at 2025 Connecticut Regional Scholastic Art Exhibition",
@@ -127,33 +219,7 @@
           "url": "https://www.ncps-k12.org/article/1951770"
         }
       ],
-      "detected_at": "2025-02-23T18:19:05.811167"
-    },
-    "New Canaan High School": {
-      "url": "https://www.ncps-k12.org/o/nchs/news",
-      "domain": "www.ncps-k12.org",
-      "hub": "newcanaan",
-      "name": "New Canaan High School",
-      "platform": "wordpress",
-      "selectors": {
-        "title": "h2 a",
-        "content_preview": "p"
-      },
-      "sample_data": [
-        {
-          "title": "College Essay Workshop - March 27th + April 10th",
-          "url": "https://www.ncps-k12.org/o/nchs/article/2020409"
-        },
-        {
-          "title": "NCHS Students Shine at 2025 Connecticut Regional Scholastic Art Exhibition",
-          "url": "https://www.ncps-k12.org/o/nchs/article/1997760"
-        },
-        {
-          "title": "SAT Tutoring w/ NCCF Grant",
-          "url": "https://www.ncps-k12.org/o/nchs/article/1951768"
-        }
-      ],
-      "detected_at": "2025-02-23T18:19:05.850474"
+      "detected_at": "2025-02-24T11:14:10.452963"
     }
   }
 }
