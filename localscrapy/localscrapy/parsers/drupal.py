@@ -1,4 +1,3 @@
-# newcanaanite/newcanaanite/parsers/drupal.py
 from .base import BaseEventParser
 
 class DrupalEventsParser(BaseEventParser):
@@ -77,3 +76,45 @@ class DrupalEventsParser(BaseEventParser):
         
         self.logger.info(f"Successfully parsed {len(events)} events")
         return events
+    
+
+    def parse_event_details(self, response):
+        """Extract additional details from an individual event page."""
+        details = {}
+
+        # Define multiple selectors for each field to handle variations
+        description_selectors = [
+            'section.lc-event__content div.field-container p::text',  # Darien Library
+            'div.field-container p::text',  # General Drupal field container
+            'div.event-description p::text',  # Alternative event description
+            'div.node__content p::text',  # Common Drupal content area
+        ]
+        location_selectors = [
+            'div.lc-event-location-address p::text',  # Darien Library location name
+            'div.lc-event-location-address div.lc-address-line::text',  # Address lines
+            'div.lc-event-location p::text',  # Broader location container
+            'address::text',  # Standard HTML address tag
+        ]
+        contact_selectors = [
+            'div.lc-event-address-container div.lc-event-contact-name::text',  # Contact name
+            'div.lc-event-location__phone a::text',  # Phone number
+            'div.contact-info::text',  # Alternative contact section
+            'footer.contact::text',  # Contact in footer (common in some Drupal themes)
+        ]
+
+        # Helper function to extract text using multiple selectors
+        def extract_with_selectors(selectors):
+            for selector in selectors:
+                extracted = response.css(selector).getall()
+                if extracted:
+                    # Clean and join extracted text
+                    return ' '.join([text.strip() for text in extracted if text.strip()])
+            return None
+
+        # Extract details
+        details['description'] = extract_with_selectors(description_selectors)
+        details['location'] = extract_with_selectors(location_selectors)
+        details['contact'] = extract_with_selectors(contact_selectors)
+
+        # Filter out None values and return
+        return {k: v for k, v in details.items() if v is not None}

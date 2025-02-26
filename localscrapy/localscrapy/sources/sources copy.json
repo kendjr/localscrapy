@@ -1,0 +1,98 @@
+{
+  "newcanaan": [
+    {
+      "url": "https://www.stmarksnewcanaan.org/upcoming-events/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "St. Marks New Canaan"
+    },
+    {
+      "url": "https://newcanaannature.org/events/",
+      "platform": "wordpress",
+      "event_selector": null,
+      "name": "New Canaan Nature Center"
+    },
+    {
+      "url": "https://tpnc.org/special-events/",
+      "platform": "wordpress",
+      "event_selector": null,
+      "name": "Town Players of New Canaan"
+    },
+    {
+      "url": "https://newcanaanymca.org/calendar/",
+      "platform": "wordpress",
+      "event_selector": null,
+      "name": "New Canaan YMCA"
+    },
+    {
+      "url": "https://newcanaandarienmoms.com/calendar/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "New Canaan Moms"
+    },
+    {
+      "url": "https://www.townplanner.com/new-canaan/ct/",
+      "platform": "Unknown",
+      "event_selector": "div.event-block",
+      "name": "New Canaan Town Planner"
+    },
+    {
+      "url": "https://newcanaancares.org/nc-cares-calendar/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "New Canaan Cares"
+    },
+    {
+      "url": "https://livenewcanaan.org/events/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "Live New Canaan"
+    },
+    {
+      "url": "https://newcanaanrepublicans.org/calendar/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "New Canaan Republican Town Committee"
+    },
+    {
+      "url": "https://newcanaanchamber.com/chamber-calendar/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "New Canaan Chamber"
+    },
+    {
+      "url": "https://www.newcanaanlibrary.org/events/upcoming",
+      "platform": "drupal",
+      "event_selector": "article.event-card",
+      "name": "New Canaan Library"
+    },
+    {
+      "url": "https://newcanaanite.com/upcoming-events",
+      "platform": "wordpress",
+      "event_selector": "div.type-tribe_events",
+      "name": "NewCanaanite"
+    }
+  ],
+  "darien": [
+    {
+      "url": "https://www.darienlibrary.org/events/upcoming",
+      "platform": "drupal",
+      "event_selector": "article.event-card",
+      "name": "Darien Library"
+    }
+  ],
+  "danbury": [
+    {
+      "url": "https://citycenterdanbury.com/events/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "Danbury City Center"
+    },
+    {
+      "url": "https://business.danburychamber.com/events/calendar",
+      "platform": "Unknown",
+      "event_selector": null,
+      "name": "Danbury Chamber"
+    }
+  ]
+}

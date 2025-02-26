@@ -1,7 +1,9 @@
 import scrapy
 import json
-import brotli
+from pathlib import Path
+import os
 import gzip
+import brotli
 
 from datetime import datetime
 from pathlib import Path
@@ -12,10 +14,22 @@ from ..parsers import (
     DrupalEventsParser,
 )
 
+SPIDER_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR = SPIDER_DIR.parent
+OUTPUT_FILE = PROJECT_DIR / "output" / "events.json"
+
 
 class EventSpider(scrapy.Spider):
     name = "event_spider"
     custom_settings = {
+        "FEEDS": {
+            str(OUTPUT_FILE): {
+                'format': 'json',
+                'encoding': 'utf8',
+                'store_empty': False,
+                'indent': 4,
+            },
+        },
         "USER_AGENT": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
         "HTTPERROR_ALLOW_ALL": True,  # Allow handling of all HTTP status codes
     }
@@ -28,10 +42,10 @@ class EventSpider(scrapy.Spider):
             "drupal": DrupalEventsParser(),
         }
 
-        spider_dir = Path(os.path.dirname(os.path.abspath(__file__)))
-        project_dir = spider_dir.parent
-        sources_path = project_dir / "sources" / "sources.json"
+        output_dir = PROJECT_DIR / "output"
+        output_dir.mkdir(exist_ok=True)
 
+        sources_path = PROJECT_DIR / "sources" / "sources.json"
         self.logger.info(f"Looking for sources.json at: {sources_path}")
         if not sources_path.exists():
             raise FileNotFoundError(f"sources.json not found at {sources_path}")
@@ -40,9 +54,7 @@ class EventSpider(scrapy.Spider):
             self.config = json.load(f)
             self.logger.info(f"Loaded {len(self.config)} hubs from config")
             for hub_name, sources in self.config.items():
-                self.logger.info(
-                    f"Hub: {hub_name} has {len(sources)} sources"
-                )
+                self.logger.info(f"Hub: {hub_name} has {len(sources)} sources")
 
     def start_requests(self):
         self.logger.info("Starting requests for all sources")
@@ -97,123 +109,97 @@ class EventSpider(scrapy.Spider):
 
 
     def parse(self, response):
-        """Main parsing logic."""
-        if response.status != 200:
-            self.logger.error(f"Got status {response.status} for {response.url}")
-            return
-
+        """Parse the event listing page and make requests to individual event pages."""
         source = response.meta['source']
-        self.logger.info(f"Parsing response from {response.url} using {source['platform']}")
+        hub_name = response.meta['hub']
+        source_name = source['name']
 
-        # Log response headers
-        self.logger.info(f"Response headers for {response.url}: {response.headers}")
-
-        # Check if the content type is HTML
-        content_type = response.headers.get('Content-Type', b'').decode('utf-8', errors='ignore')
-        self.logger.info(f"Content-Type: {content_type}")
-
-        if 'text/html' not in content_type:
-            self.logger.warning(f"Non-HTML content type {content_type} for {response.url}")
-            return
-
-        # Detect and manually decompress if needed
-        encoding = response.headers.get('Content-Encoding', b'').decode('utf-8', errors='ignore')
-        self.logger.info(f"Detected Encoding: {encoding}")
-
-        raw_body = response.body  # Raw response body
-
-        if 'br' in encoding:  # Brotli compressed response
-            self.logger.info("Decompressing Brotli response")
-            try:
-                raw_body = brotli.decompress(raw_body)
-            except brotli.error as e:
-                self.logger.error(f"Brotli decompression failed: {str(e)}")
-
-        elif 'gzip' in encoding or 'deflate' in encoding:  # Gzip/Deflate compressed response
-            self.logger.info("Decompressing Gzip response")
-            try:
-                raw_body = gzip.decompress(raw_body)
-            except OSError as e:
-                self.logger.error(f"Gzip decompression failed: {str(e)}")
-
-        # Ensure response is treated as text properly
-        try:
-            html_content = raw_body.decode('utf-8', errors='replace')  # Decode properly
-        except UnicodeDecodeError:
-            self.logger.warning("Scrapy failed to decode response properly, trying ignore mode.")
-            html_content = raw_body.decode('utf-8', errors='ignore')
-
-        # Save response for debugging
-        debug_file = f"debug_{source['name'].lower().replace(' ', '_')}.html"
-        try:
-            with open(debug_file, 'w', encoding='utf-8') as f:
-                f.write(html_content)
-            self.logger.info(f"Saved debug HTML to {debug_file}")
-        except Exception as e:
-            self.logger.error(f"Failed to write debug file: {str(e)}")
-
-        # Extract JSON-LD Event Data
-        json_ld_scripts = response.xpath('//script[@type="application/ld+json"]/text()').getall()
-        
-        extracted_events = []
-        for json_ld in json_ld_scripts:
-            try:
-                data = json.loads(json_ld)  # Parse JSON
-                if isinstance(data, list):  # If multiple events in an array
-                    for event in data:
-                        if event.get("@type") == "Event":
-                            extracted_events.append(event)
-                elif data.get("@type") == "Event":  # Single event case
-                    extracted_events.append(data)
-            except json.JSONDecodeError:
-                self.logger.warning("Skipping invalid JSON-LD")
-
-        self.logger.info(f"Extracted {len(extracted_events)} events from JSON-LD.")
-
-        # Get the appropriate parser
+        # Select the parser based on the platform
         parser = self.parser_mapping.get(source['platform'])
         if not parser:
             self.logger.error(f"No parser found for platform: {source['platform']}")
             return
 
         try:
-            # Get events from HTML parser
+            # Extract basic events from the listing page
             html_events = parser.parse_events(response)
-            self.logger.info(f"Found {len(html_events)} events for {source['name']} via HTML parsing.")
+            self.logger.info(f"Found {len(html_events)} events for {source_name} via HTML parsing.")
 
-            # Merge both extracted JSON-LD and HTML events
-            all_events = html_events + extracted_events
-
-            # Group events by hub and URL name
-            grouped_events = {}
-            for event in all_events:
-                hub_name = response.meta['hub']
-                source_name = source['name']
-                event.update({
-                    'source_url': response.url,
-                    'hub': hub_name,
-                    'source_name': source_name
-                })
-                
-                if hub_name not in grouped_events:
-                    grouped_events[hub_name] = {}
-                if source_name not in grouped_events[hub_name]:
-                    grouped_events[hub_name][source_name] = []
-                grouped_events[hub_name][source_name].append(event)
-
-            # Yield structured JSON
-            structured_output = {}
-            for hub, sources in grouped_events.items():
-                structured_output[hub] = [
-                    {source_name: events} for source_name, events in sources.items()
-                ]
-            
-            yield structured_output
+            # Process each event
+            for event in html_events:
+                event_url = event.get('url')
+                if event_url:
+                    # Make a request to the event page with error handling
+                    yield scrapy.Request(
+                        url=event_url,
+                        callback=self.parse_event_page,
+                        errback=self.handle_event_page_error,
+                        meta={
+                            'hub': hub_name,
+                            'source': source_name,
+                            'event': event,
+                            'parser': parser
+                        }
+                    )
+                else:
+                    # Yield events without URLs immediately
+                    self.logger.warning(f"No URL found for event: {event.get('title', 'unknown')}")
+                    yield {
+                        'hub': hub_name,
+                        'source': source_name,
+                        'event': event
+                    }
 
         except Exception as e:
-            self.logger.error(f"Error parsing events for {source['name']}: {str(e)}")
-            import traceback
-            self.logger.error(traceback.format_exc())
+            self.logger.error(f"Error parsing events for {source_name}: {str(e)}")
+
+    def parse_event_page(self, response):
+        """Parse the individual event page to extract additional details."""
+        event = response.meta['event']
+        parser = response.meta['parser']
+        hub = response.meta['hub']
+        source = response.meta['source']
+
+        try:
+            # Extract additional details from the event page
+            additional_details = parser.parse_event_details(response)
+            self.logger.info(f"Extracted details: {additional_details}")
+            # Update the event dictionary with new details
+            event.update(additional_details)
+            event['details_fetched'] = True
+        except Exception as e:
+            self.logger.error(f"Error parsing event details for {event.get('url')}: {str(e)}")
+            event['details_fetched'] = False
+
+
+        # Yield the updated event
+        yield {
+            'hub': hub,
+            'source': source,
+            'event': event
+        }
+    def handle_event_page_error(self, failure):
+        """Handle failures for individual event page requests."""
+        request = failure.request
+        event = request.meta['event']
+        hub = request.meta['hub']
+        source = request.meta['source']
+
+        # Log the error with specific details
+        if failure.check(scrapy.exceptions.HttpError):
+            response = failure.value.response
+            self.logger.error(f"HTTP Error {response.status} for event page {request.url}")
+        else:
+            self.logger.error(f"Failed to fetch event page {request.url}: {failure.value}")
+
+        # Yield the basic event data
+        yield {
+            'hub': hub,
+            'source': source,
+            'event': event
+        }
+
+        
 
     def get_next_page(self, response, pagination_config):
         """Handles pagination logic."""

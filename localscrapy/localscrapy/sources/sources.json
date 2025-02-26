@@ -1,58 +1,10 @@
 {
   "newcanaan": [
     {
-      "url": "https://tpnc.org/special-events/",
-      "platform": "wordpress",
-      "event_selector": null,
-      "name": "Town Players of New Canaan"
-    },
-    {
-      "url": "https://www.stmarksnewcanaan.org/upcoming-events/",
-      "platform": "wordpress",
-      "event_selector": ".tribe-common",
-      "name": "St. Marks New Canaan"
-    },
-    {
-      "url": "https://newcanaanchamber.com/chamber-calendar/",
-      "platform": "wordpress",
-      "event_selector": ".tribe-common",
-      "name": "New Canaan Chamber"
-    },
-    {
-      "url": "https://newcanaancares.org/nc-cares-calendar/",
-      "platform": "wordpress",
-      "event_selector": ".tribe-common",
-      "name": "New Canaan Cares"
-    },
-    {
-      "url": "https://www.townplanner.com/new-canaan/ct/",
-      "platform": "Unknown",
-      "event_selector": "div.event-block",
-      "name": "New Canaan Town Planner"
-    },
-    {
-      "url": "https://livenewcanaan.org/events/",
-      "platform": "wordpress",
-      "event_selector": ".tribe-common",
-      "name": "Live New Canaan"
-    },
-    {
-      "url": "https://newcanaandarienmoms.com/calendar/",
-      "platform": "wordpress",
-      "event_selector": ".tribe-common",
-      "name": "New Canaan Moms"
-    },
-    {
       "url": "https://www.newcanaanlibrary.org/events/upcoming",
       "platform": "drupal",
       "event_selector": "article.event-card",
       "name": "New Canaan Library"
-    },
-    {
-      "url": "https://newcanaanite.com/upcoming-events",
-      "platform": "wordpress",
-      "event_selector": "div.type-tribe_events",
-      "name": "NewCanaanite"
     }
   ],
   "darien": [
