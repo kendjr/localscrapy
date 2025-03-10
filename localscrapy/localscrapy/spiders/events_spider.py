@@ -4,7 +4,8 @@ from pathlib import Path
 import os
 import gzip
 import brotli
-
+from scrapy.exceptions import CloseSpider
+from utils.sqs_sender import send_to_sqs, get_secret
 from datetime import datetime
 from pathlib import Path
 import os
@@ -22,14 +23,6 @@ OUTPUT_FILE = PROJECT_DIR / "output" / "events.json"
 class EventSpider(scrapy.Spider):
     name = "event_spider"
     custom_settings = {
-        "FEEDS": {
-            str(OUTPUT_FILE): {
-                'format': 'json',
-                'encoding': 'utf8',
-                'store_empty': False,
-                'indent': 4,
-            },
-        },
         "USER_AGENT": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
         "HTTPERROR_ALLOW_ALL": True,  # Allow handling of all HTTP status codes
     }
@@ -42,20 +35,19 @@ class EventSpider(scrapy.Spider):
             "drupal": DrupalEventsParser(),
         }
 
-        output_dir = PROJECT_DIR / "output"
-        output_dir.mkdir(exist_ok=True)
 
-        sources_path = PROJECT_DIR / "sources" / "sources.json"
-        self.logger.info(f"Looking for sources.json at: {sources_path}")
-        if not sources_path.exists():
-            raise FileNotFoundError(f"sources.json not found at {sources_path}")
+        # Get SQS queue URL from environment variable
+        self.sqs_queue_url = os.getenv('SQS_QUEUE_URL')
+        if not self.sqs_queue_url:
+            raise CloseSpider("SQS_QUEUE_URL environment variable not set")
 
-        with open(sources_path) as f:
-            self.config = json.load(f)
-            self.logger.info(f"Loaded {len(self.config)} hubs from config")
-            for hub_name, sources in self.config.items():
-                self.logger.info(f"Hub: {hub_name} has {len(sources)} sources")
-
+        # Retrieve the email from AWS Secrets Manager
+        try:
+            self.bot_email = get_secret('story-bot-email')  # Replace with your secret name/ARN
+            self.logger.info(f"Retrieved bot email: {self.bot_email}")
+        except Exception as e:
+            raise CloseSpider(f"Failed to retrieve bot email from Secrets Manager: {e}")
+        
     def start_requests(self):
         self.logger.info("Starting requests for all sources")
         headers = {
@@ -142,16 +134,19 @@ class EventSpider(scrapy.Spider):
                         }
                     )
                 else:
-                    # Yield events without URLs immediately
+                    # send events without URLs immediately
                     self.logger.warning(f"No URL found for event: {event.get('title', 'unknown')}")
-                    yield {
+                    # Send event to SQS immediately
+                    message_body = {
                         'hub': hub_name,
                         'source': source_name,
-                        'event': event
+                        'event': event,
+                        'bot_email': self.bot_email
                     }
-
+                    send_to_sqs(self.sqs_queue_url, message_body)
         except Exception as e:
             self.logger.error(f"Error parsing events for {source_name}: {str(e)}")
+
 
     def parse_event_page(self, response):
         """Parse the individual event page to extract additional details."""
@@ -172,12 +167,16 @@ class EventSpider(scrapy.Spider):
             event['details_fetched'] = False
 
 
-        # Yield the updated event
-        yield {
+        # Send the updated event to SQS
+        message_body = {
             'hub': hub,
             'source': source,
-            'event': event
+            'event': event,
+            'bot_email': self.bot_email
         }
+        send_to_sqs(self.sqs_queue_url, message_body)
+
+
     def handle_event_page_error(self, failure):
         """Handle failures for individual event page requests."""
         request = failure.request
@@ -192,13 +191,14 @@ class EventSpider(scrapy.Spider):
         else:
             self.logger.error(f"Failed to fetch event page {request.url}: {failure.value}")
 
-        # Yield the basic event data
-        yield {
+        # Send the basic event data to SQS
+        message_body = {
             'hub': hub,
             'source': source,
-            'event': event
+            'event': event,
+            'bot_email': self.bot_email
         }
-
+        send_to_sqs(self.sqs_queue_url, message_body)
         
 
     def get_next_page(self, response, pagination_config):
