@@ -1,17 +1,17 @@
-url,hub,name
-https://www.darienlibrary.org/events/upcoming,darien,Darien Library
-https://www.newcanaanlibrary.org/events/upcoming,newcanaan,New Canaan Library
-https://newcanaanchamber.com/chamber-calendar/,newcanaan,New Canaan Chamber
-https://newcanaanite.com/upcoming-events,newcanaan,NewCanaanite
-https://livenewcanaan.org/events/,newcanaan,Live New Canaan
-https://www.townplanner.com/new-canaan/ct/,newcanaan,New Canaan Town Planner
-https://www.stmarksnewcanaan.org/upcoming-events/,newcanaan,St. Marks New Canaan
-https://tpnc.org/special-events/,newcanaan,Town Players of New Canaan
-https://newcanaandarienmoms.com/calendar/,newcanaan,New Canaan Moms
-https://newcanaancares.org/nc-cares-calendar/,newcanaan,New Canaan Cares
-https://newcanaannature.org/events/,newcanaan,New Canaan Nature Center
-https://newcanaanrepublicans.org/calendar/,newcanaan,New Canaan Republican Town Committee
-https://newcanaanymca.org/calendar/,newcanaan,New Canaan YMCA
-https://citycenterdanbury.com/events/,danbury,Danbury City Center
-https://www.fairfieldafterdark.com/danbury-ct,danbury,Fairfield After Dark - Danbury
-https://business.danburychamber.com/events/calendar,danbury,Danbury Chamber
+url,hub,name,address
+https://www.darienlibrary.org/events/upcoming,darien,Darien Library,"1441 Post Road Darien, CT 06820"
+https://www.newcanaanlibrary.org/events/upcoming,newcanaan,New Canaan Library,"151 Main St, New Canaan, CT 06840"
+https://newcanaanchamber.com/chamber-calendar/,newcanaan,New Canaan Chamber,
+https://newcanaanite.com/upcoming-events,newcanaan,NewCanaanite,
+https://livenewcanaan.org/events/,newcanaan,Live New Canaan,
+https://www.townplanner.com/new-canaan/ct/,newcanaan,New Canaan Town Planner,
+https://www.stmarksnewcanaan.org/upcoming-events/,newcanaan,St. Marks New Canaan,"111 Oenoke Ridge, New Canaan, CT 06840"
+https://tpnc.org/special-events/,newcanaan,Town Players of New Canaan,"679 South Ave, New Canaan, CT 06840"
+https://newcanaandarienmoms.com/calendar/,newcanaan,New Canaan Moms,
+https://newcanaancares.org/nc-cares-calendar/,newcanaan,New Canaan Cares,
+https://newcanaannature.org/events/,newcanaan,New Canaan Nature Center,"144 Oenoke Ridge, New Canaan, CT 06840"
+https://newcanaanrepublicans.org/calendar/,newcanaan,New Canaan Republican Town Committee,
+https://newcanaanymca.org/calendar/,newcanaan,New Canaan YMCA,"564 South Ave, New Canaan, CT 06840"
+https://citycenterdanbury.com/events/,danbury,Danbury City Center,"268 Main St, Danbury, CT 06810"
+https://www.fairfieldafterdark.com/danbury-ct,danbury,Fairfield After Dark - Danbury,
+https://business.danburychamber.com/events/calendar,danbury,Danbury Chamber,

@@ -1,9 +1,9 @@
 import scrapy
-import re
 import os
 import csv
 import json
 from collections import defaultdict
+from ..utils.geocode_util import get_geocode  # Import the shared geocoding utility
 
 class EventDetectorSpider(scrapy.Spider):
     name = 'event_detector'
@@ -14,7 +14,6 @@ class EventDetectorSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(EventDetectorSpider, self).__init__(*args, **kwargs)
         self.urls_info = self.load_urls_from_csv('urls.csv')
-        # Remove custom_settings and handle file writing only in closed method
 
     def load_urls_from_csv(self, file_name):
         urls_info = []
@@ -23,10 +22,13 @@ class EventDetectorSpider(scrapy.Spider):
             reader = csv.DictReader(csvfile)
             for row in reader:
                 if all(key in row for key in ['url', 'hub', 'name']):
+                    # Read address from CSV, default to None if missing or empty
+                    address = row.get('address', '').strip() or None
                     urls_info.append({
                         'url': row['url'],
                         'hub': row['hub'],
-                        'name': row['name']
+                        'name': row['name'],
+                        'address': address
                     })
         return urls_info
 
@@ -45,12 +47,32 @@ class EventDetectorSpider(scrapy.Spider):
             'url': url,
             'platform': platform,
             'event_selector': event_selector,
-            'name': info['name']
+            'name': info['name'],
+            'address': info['address']  # Use address from CSV
         }
         self.grouped_results[info['hub']].append(result)
 
     def closed(self, reason):
-        # Convert defaultdict to regular dict for proper JSON serialization
+        # Geocode all addresses from CSV before writing to JSON
+        for hub, results in self.grouped_results.items():
+            for result in results:
+                address = result.get('address')
+                if address:
+                    geocode = get_geocode(address)
+                    if geocode:
+                        # Ensure geocode uses 'latitude' and 'longitude' keys
+                        standardized_geocode = {
+                            'latitude': geocode.get('latitude', geocode.get('lat')),
+                            'longitude': geocode.get('longitude', geocode.get('lng'))
+                        }
+                        self.logger.info(f"Geocode for {address}: {standardized_geocode}")
+                        result['geocode'] = standardized_geocode
+                    else:
+                        result['geocode'] = None  # Geocoding failed
+                else:
+                    result['geocode'] = None  # No address in CSV
+                            
+        # Convert defaultdict to regular dict for JSON serialization
         output = dict(self.grouped_results)
         
         # Ensure the sources directory exists

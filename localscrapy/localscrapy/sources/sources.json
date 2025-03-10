@@ -4,7 +4,133 @@
       "url": "https://www.newcanaanlibrary.org/events/upcoming",
       "platform": "drupal",
       "event_selector": "article.event-card",
-      "name": "New Canaan Library"
+      "name": "New Canaan Library",
+      "address": "151 Main St, New Canaan, CT 06840",
+      "geocode": {
+        "latitude": 41.1451692,
+        "longitude": -73.49227945342106
+      }
+    },
+    {
+      "url": "https://newcanaancares.org/nc-cares-calendar/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "New Canaan Cares",
+      "address": null,
+      "geocode": null
+    },
+    {
+      "url": "https://www.stmarksnewcanaan.org/upcoming-events/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "St. Marks New Canaan",
+      "address": "111 Oenoke Ridge, New Canaan, CT 06840",
+      "geocode": {
+        "latitude": 41.1526638,
+        "longitude": -73.4981318
+      }
+    },
+    {
+      "url": "https://tpnc.org/special-events/",
+      "platform": "wordpress",
+      "event_selector": null,
+      "name": "Town Players of New Canaan",
+      "address": "679 South Ave, New Canaan, CT 06840",
+      "geocode": {
+        "latitude": 41.12236935,
+        "longitude": -73.48921242174137
+      }
+    },
+    {
+      "url": "https://newcanaannature.org/events/",
+      "platform": "wordpress",
+      "event_selector": null,
+      "name": "New Canaan Nature Center",
+      "address": "144 Oenoke Ridge, New Canaan, CT 06840",
+      "geocode": {
+        "latitude": 41.15339269018253,
+        "longitude": -73.49928237835768
+      }
+    },
+    {
+      "url": "https://newcanaanymca.org/calendar/",
+      "platform": "wordpress",
+      "event_selector": null,
+      "name": "New Canaan YMCA",
+      "address": "564 South Ave, New Canaan, CT 06840",
+      "geocode": {
+        "latitude": 41.1288239,
+        "longitude": -73.4846894
+      }
+    },
+    {
+      "url": "https://newcanaanchamber.com/chamber-calendar/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "New Canaan Chamber",
+      "address": null,
+      "geocode": null
+    },
+    {
+      "url": "https://www.townplanner.com/new-canaan/ct/",
+      "platform": "Unknown",
+      "event_selector": "div.event-block",
+      "name": "New Canaan Town Planner",
+      "address": null,
+      "geocode": null
+    },
+    {
+      "url": "https://newcanaandarienmoms.com/calendar/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "New Canaan Moms",
+      "address": null,
+      "geocode": null
+    },
+    {
+      "url": "https://livenewcanaan.org/events/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "Live New Canaan",
+      "address": null,
+      "geocode": null
+    },
+    {
+      "url": "https://newcanaanrepublicans.org/calendar/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "New Canaan Republican Town Committee",
+      "address": null,
+      "geocode": null
+    },
+    {
+      "url": "https://newcanaanite.com/upcoming-events",
+      "platform": "wordpress",
+      "event_selector": "div.type-tribe_events",
+      "name": "NewCanaanite",
+      "address": null,
+      "geocode": null
+    }
+  ],
+  "danbury": [
+    {
+      "url": "https://citycenterdanbury.com/events/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "Danbury City Center",
+      "address": "268 Main St, Danbury, CT 06810",
+      "geocode": {
+        "latitude": 41.39558926712616,
+        "longitude": -73.45385373564145
+      }
+    },
+    {
+      "url": "https://business.danburychamber.com/events/calendar",
+      "platform": "Unknown",
+      "event_selector": null,
+      "name": "Danbury Chamber",
+      "address": null,
+      "geocode": null
     }
   ],
   "darien": [
@@ -12,7 +138,12 @@
       "url": "https://www.darienlibrary.org/events/upcoming",
       "platform": "drupal",
       "event_selector": "article.event-card",
-      "name": "Darien Library"
+      "name": "Darien Library",
+      "address": "1441 Post Road Darien, CT 06820",
+      "geocode": {
+        "latitude": 41.068769849999995,
+        "longitude": -73.4782128994467
+      }
     }
   ]
 }

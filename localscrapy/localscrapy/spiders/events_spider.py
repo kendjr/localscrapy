@@ -5,7 +5,7 @@ import os
 import gzip
 import brotli
 from scrapy.exceptions import CloseSpider
-from utils.sqs_sender import send_to_sqs, get_secret
+from ..utils.sqs_sender import send_to_sqs, get_secret
 from datetime import datetime
 from pathlib import Path
 import os
@@ -67,6 +67,9 @@ class EventSpider(scrapy.Spider):
                 test_url = source["url"]
                 self.logger.info(f"Testing URL: {test_url}")
 
+                # Get the geocode from the source entry
+                geocode = source.get("geocode") 
+
                 yield scrapy.Request(
                     url=test_url,
                     callback=self.parse,
@@ -76,6 +79,7 @@ class EventSpider(scrapy.Spider):
                     meta={
                         "hub": hub_name,
                         "source": source,
+                        "geocode": geocode,
                         "handle_httpstatus_list": [404, 500, 502, 503, 504],
                     },
                 )
@@ -101,27 +105,24 @@ class EventSpider(scrapy.Spider):
 
 
     def parse(self, response):
-        """Parse the event listing page and make requests to individual event pages."""
         source = response.meta['source']
         hub_name = response.meta['hub']
         source_name = source['name']
+        geocode = response.meta['geocode']  # Retrieve geocode from meta
 
-        # Select the parser based on the platform
         parser = self.parser_mapping.get(source['platform'])
         if not parser:
             self.logger.error(f"No parser found for platform: {source['platform']}")
             return
 
         try:
-            # Extract basic events from the listing page
             html_events = parser.parse_events(response)
             self.logger.info(f"Found {len(html_events)} events for {source_name} via HTML parsing.")
 
-            # Process each event
             for event in html_events:
+                event['geocode'] = geocode  # Attach geocode to each event
                 event_url = event.get('url')
                 if event_url:
-                    # Make a request to the event page with error handling
                     yield scrapy.Request(
                         url=event_url,
                         callback=self.parse_event_page,
@@ -134,9 +135,7 @@ class EventSpider(scrapy.Spider):
                         }
                     )
                 else:
-                    # send events without URLs immediately
                     self.logger.warning(f"No URL found for event: {event.get('title', 'unknown')}")
-                    # Send event to SQS immediately
                     message_body = {
                         'hub': hub_name,
                         'source': source_name,
