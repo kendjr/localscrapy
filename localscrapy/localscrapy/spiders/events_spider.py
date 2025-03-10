@@ -4,6 +4,7 @@ from pathlib import Path
 import os
 import gzip
 import brotli
+from scrapy import Spider
 from scrapy.exceptions import CloseSpider
 from ..utils.sqs_sender import send_to_sqs, get_secret
 from datetime import datetime
@@ -14,13 +15,17 @@ from ..parsers import (
     LibraryEventsParser,
     DrupalEventsParser,
 )
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 SPIDER_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR = SPIDER_DIR.parent
 OUTPUT_FILE = PROJECT_DIR / "output" / "events.json"
 
 
-class EventSpider(scrapy.Spider):
+class EventSpider(Spider):
     name = "event_spider"
     custom_settings = {
         "USER_AGENT": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
@@ -29,25 +34,34 @@ class EventSpider(scrapy.Spider):
 
     def __init__(self, *args, **kwargs):
         super(EventSpider, self).__init__(*args, **kwargs)
+        config_path = Path(__file__).parent.parent / "sources" / "sources.json"
+        try:
+            with open(config_path, "r") as f:
+                self.config = json.load(f)
+            self.logger.info(f"Loaded config from {config_path}")
+        except FileNotFoundError:
+            raise CloseSpider(f"Configuration file not found: {config_path}")
+        except json.JSONDecodeError:
+            raise CloseSpider(f"Invalid JSON in configuration file: {config_path}")
+
         self.parser_mapping = {
             "wordpress": WordPressEventsCalendarParser(),
             "library": LibraryEventsParser(),
             "drupal": DrupalEventsParser(),
         }
 
-
         # Get SQS queue URL from environment variable
         self.sqs_queue_url = os.getenv('SQS_QUEUE_URL')
         if not self.sqs_queue_url:
             raise CloseSpider("SQS_QUEUE_URL environment variable not set")
 
-        # Retrieve the email from AWS Secrets Manager
+        # Retrieve the secret string from AWS Secrets Manager
         try:
-            self.bot_email = get_secret('story-bot-email')  # Replace with your secret name/ARN
-            self.logger.info(f"Retrieved bot email: {self.bot_email}")
+            self.secret_string = get_secret()  
+            self.logger.info("Retrieved secret string")
         except Exception as e:
-            raise CloseSpider(f"Failed to retrieve bot email from Secrets Manager: {e}")
-        
+            raise CloseSpider(f"Failed to retrieve secret string from Secrets Manager: {e}")
+
     def start_requests(self):
         self.logger.info("Starting requests for all sources")
         headers = {
@@ -68,7 +82,7 @@ class EventSpider(scrapy.Spider):
                 self.logger.info(f"Testing URL: {test_url}")
 
                 # Get the geocode from the source entry
-                geocode = source.get("geocode") 
+                geocode = source.get("geocode")
 
                 yield scrapy.Request(
                     url=test_url,
@@ -102,7 +116,6 @@ class EventSpider(scrapy.Spider):
                     meta=request.meta,
                     dont_filter=True,
                 )
-
 
     def parse(self, response):
         source = response.meta['source']
@@ -140,12 +153,10 @@ class EventSpider(scrapy.Spider):
                         'hub': hub_name,
                         'source': source_name,
                         'event': event,
-                        'bot_email': self.bot_email
                     }
-                    send_to_sqs(self.sqs_queue_url, message_body)
+                    send_to_sqs(self.sqs_queue_url, message_body)  # Pass dictionary directly
         except Exception as e:
             self.logger.error(f"Error parsing events for {source_name}: {str(e)}")
-
 
     def parse_event_page(self, response):
         """Parse the individual event page to extract additional details."""
@@ -165,16 +176,13 @@ class EventSpider(scrapy.Spider):
             self.logger.error(f"Error parsing event details for {event.get('url')}: {str(e)}")
             event['details_fetched'] = False
 
-
         # Send the updated event to SQS
         message_body = {
             'hub': hub,
             'source': source,
-            'event': event,
-            'bot_email': self.bot_email
+            'event': event
         }
-        send_to_sqs(self.sqs_queue_url, message_body)
-
+        send_to_sqs(self.sqs_queue_url, message_body)  # Send as JSON string
 
     def handle_event_page_error(self, failure):
         """Handle failures for individual event page requests."""
@@ -194,11 +202,9 @@ class EventSpider(scrapy.Spider):
         message_body = {
             'hub': hub,
             'source': source,
-            'event': event,
-            'bot_email': self.bot_email
+            'event': event
         }
-        send_to_sqs(self.sqs_queue_url, message_body)
-        
+        send_to_sqs(self.sqs_queue_url, message_body)  # Send as JSON string
 
     def get_next_page(self, response, pagination_config):
         """Handles pagination logic."""
