@@ -231,10 +231,14 @@ class WordPressEventsCalendarParser(BaseEventParser):
         """
         details = {}
         
-        # Full description
-        description = response.css('div.tribe-events-single-event-description ::text').getall()
-        details['full_description'] = ' '.join([d.strip() for d in description if d.strip()])
+        # Extract full description and links from the description container
+        description_selector = 'div.tribe-events-single-event-description'
+        #description = description_container.css('::text').getall()
+        #details['full_description'] = ' '.join([d.strip() for d in description if d.strip()])
 
+        # Extract all links within the description
+        details['links'] = self.extract_links(response, description_selector)
+        
         # Organizer
         organizer = response.css('div.tribe-events-meta-group-organizer dd a::text').get()
         if organizer:

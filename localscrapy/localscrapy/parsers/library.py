@@ -1,4 +1,3 @@
-# newcanaanite/newcanaanite/parsers/library.py
 from .base import BaseEventParser
 
 class LibraryEventsParser(BaseEventParser):
@@ -10,7 +9,7 @@ class LibraryEventsParser(BaseEventParser):
             
         self.logger.info("Attempting to parse library events")
         
-        # List possible selectors
+        # List possible selectors for event containers
         selectors = [
             'div.event-listing',
             'div.event-item',
@@ -38,17 +37,24 @@ class LibraryEventsParser(BaseEventParser):
             try:
                 # Extract title
                 title = (event.css('h3::text').get() or
-                        event.css('.event-title::text').get() or
-                        event.css('.title::text').get())
+                         event.css('.event-title::text').get() or
+                         event.css('.title::text').get())
                 
                 # Extract date
                 date = (event.css('.event-date::text').get() or
-                       event.css('.date::text').get() or
-                       event.css('.time::text').get())
+                        event.css('.date::text').get() or
+                        event.css('.time::text').get())
                 
-                # Extract description
-                description = (event.css('.event-description::text').get() or
-                             event.css('.description::text').get())
+                # Extract description container
+                description_container = event.css('.event-description') or event.css('.description')
+                if description_container:
+                    # Extract full text from the container
+                    description_text = ' '.join(description_container[0].xpath('.//text()').getall()).strip()
+                    # Extract links from the container
+                    links = [response.urljoin(link) for link in description_container[0].css('a::attr(href)').getall()]
+                else:
+                    description_text = None
+                    links = []
                 
                 # Extract URL
                 url = event.css('a::attr(href)').get()
@@ -57,8 +63,9 @@ class LibraryEventsParser(BaseEventParser):
                     events.append({
                         'title': title,
                         'schedule': date,
-                        'description': description,
-                        'url': url
+                        'description': description_text,
+                        'url': url,
+                        'links': links
                     })
                     
             except Exception as e:

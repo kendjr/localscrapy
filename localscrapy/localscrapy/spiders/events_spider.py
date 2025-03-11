@@ -176,6 +176,12 @@ class EventSpider(Spider):
             self.logger.error(f"Error parsing event details for {event.get('url')}: {str(e)}")
             event['details_fetched'] = False
 
+        # Log the presence of the links field
+        if 'links' in event:
+            self.logger.info(f"Event {event.get('title', 'unknown')} has {len(event['links'])} links")
+        else:
+            self.logger.info(f"Event {event.get('title', 'unknown')} has no links")
+
         # Send the updated event to SQS
         message_body = {
             'hub': hub,
@@ -197,6 +203,12 @@ class EventSpider(Spider):
             self.logger.error(f"HTTP Error {response.status} for event page {request.url}")
         else:
             self.logger.error(f"Failed to fetch event page {request.url}: {failure.value}")
+
+        # Log the presence of the links field
+        if 'links' in event:
+            self.logger.info(f"Event {event.get('title', 'unknown')} has {len(event['links'])} links (sent due to error)")
+        else:
+            self.logger.info(f"Event {event.get('title', 'unknown')} has no links (sent due to error)")
 
         # Send the basic event data to SQS
         message_body = {
