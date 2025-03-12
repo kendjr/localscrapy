@@ -4,6 +4,9 @@ import re
 
 class WordPressEventsCalendarParser(BaseEventParser):
     def parse_events(self, response):
+        """
+        Parse events from a WordPress events calendar page using JSON-LD or CSS selectors.
+        """
         events = []
         
         # Save the HTML for debugging
@@ -14,29 +17,66 @@ class WordPressEventsCalendarParser(BaseEventParser):
 
         ## ========== STEP 1: TRY JSON-LD PARSING FIRST ==========
         json_ld_scripts = response.xpath('//script[@type="application/ld+json"]/text()').getall()
-        
-        for script in json_ld_scripts:
+        self.logger.info(f"Found {len(json_ld_scripts)} JSON-LD scripts")
+
+        for idx, script in enumerate(json_ld_scripts):
+            self.logger.debug(f"Processing JSON-LD script {idx}: {script[:100]}...")
             try:
+                # Parse JSON and log its structure
                 data = json.loads(script)
-                if isinstance(data, list):
-                    for event in data:
-                        if event.get("@type") == "Event":
-                            events.append({
-                                'title': event.get("name"),
-                                'schedule': f"{event.get('startDate')} - {event.get('endDate')}",
-                                'venue': {
-                                    'name': event.get("location", {}).get("name"),
-                                    'address': event.get("location", {}).get("address", {}).get("streetAddress"),
-                                },
-                                'cost': event.get("offers", {}).get("price"),
-                                'description': event.get("description"),
-                                'url': event.get("url")
-                            })
+                self.logger.debug(f"Parsed data from script {idx}: type={type(data)}")
+                
+                # Handle both single dictionaries and lists
+                items = data if isinstance(data, list) else [data] if isinstance(data, dict) else []
+                if not items:
+                    self.logger.debug(f"Script {idx} contains no processable data: {data}")
+                    continue
+
+                self.logger.debug(f"Script {idx} contains {len(items)} items")
+                self.logger.debug(f"Types of first few items: {[type(item) for item in items[:3]]}")
+                
+                # Process each item in the list or single dict
+                for i, event in enumerate(items):
+                    self.logger.debug(f"Script {idx}, item {i}: type={type(event)}")
+                    if not isinstance(event, dict):
+                        self.logger.warning(f"Skipping non-dict item in script {idx}, position {i}: {event} (type: {type(event)})")
+                        continue
+                    if event.get("@type") != "Event":
+                        self.logger.debug(f"Item {i} in script {idx} is not an Event: {event.get('@type')}")
+                        continue
+                    
+                    # Safely extract event data with defaults and type checks
+                    location = event.get("location", {})
+                    if not isinstance(location, dict):
+                        self.logger.warning(f"Location is not a dict in script {idx}, item {i}: {location}")
+                        location = {}
+                    address = location.get("address", {})
+                    if not isinstance(address, dict):
+                        self.logger.warning(f"Address is not a dict in script {idx}, item {i}: {address}")
+                        address = {}
+                    offers = event.get("offers", {})
+                    if not isinstance(offers, dict):
+                        self.logger.warning(f"Offers is not a dict in script {idx}, item {i}: {offers}")
+                        offers = {}
+
+                    events.append({
+                        'title': event.get("name"),
+                        'schedule': f"{event.get('startDate')} - {event.get('endDate')}",
+                        'venue': {
+                            'name': location.get("name"),
+                            'address': address.get("streetAddress"),
+                        },
+                        'cost': offers.get("price"),
+                        'description': event.get("description"),
+                        'url': event.get("url")
+                    })
+                
                 if events:
                     self.logger.info(f"Successfully parsed {len(events)} events using JSON-LD")
-                    return events  # If JSON-LD data was found, return immediately
+                    return events  # Return immediately if events are found
+
             except json.JSONDecodeError as e:
-                self.logger.error(f"Error parsing JSON-LD: {str(e)}")
+                self.logger.error(f"Error parsing JSON-LD in script {idx}: {str(e)}")
 
         ## ========== STEP 2: FALLBACK TO CSS SELECTOR PARSING ==========
         self.logger.info("No JSON-LD events found, falling back to CSS selectors.")
@@ -116,7 +156,7 @@ class WordPressEventsCalendarParser(BaseEventParser):
                         break
                 if not title:
                     self.logger.warning("Skipping event: No title found")
-                    continue  # Skip this event if no title is found
+                    continue
                 
                 # Extract schedule (multiple parts)
                 schedule = None
@@ -164,7 +204,7 @@ class WordPressEventsCalendarParser(BaseEventParser):
                         break
 
                 # Debug log extracted data
-                self.logger.info(f"Extracted Event: Title: {title}, Schedule: {schedule}, Venue: {venue_name}, URL: {url}")
+                self.logger.debug(f"Extracted Event: Title: {title}, Schedule: {schedule}, Venue: {venue_name}, URL: {url}")
 
                 events.append({
                     'title': title,
@@ -179,27 +219,31 @@ class WordPressEventsCalendarParser(BaseEventParser):
                 })
 
             except Exception as e:
-                self.logger.error(f"Error parsing event: {str(e)}")
+                self.logger.error(f"Error parsing event with CSS: {str(e)}")
                 continue
         
         self.logger.info(f"Successfully parsed {len(events)} events using CSS selectors")
         return events
-    
 
     def parse_event_details(self, response):
-        """Extract additional details from the individual event page."""
+        """
+        Extract additional details from an individual event page.
+        """
         details = {}
         
-        # Full description
-        description = response.css('div.tribe-events-single-event-description ::text').getall()
-        details['full_description'] = ' '.join([d.strip() for d in description if d.strip()])
+        # Extract full description and links from the description container
+        description_selector = 'div.tribe-events-single-event-description'
+        #description = description_container.css('::text').getall()
+        #details['full_description'] = ' '.join([d.strip() for d in description if d.strip()])
 
+        # Extract all links within the description
+        details['links'] = self.extract_links(response, description_selector)
+        
         # Organizer
         organizer = response.css('div.tribe-events-meta-group-organizer dd a::text').get()
         if organizer:
             details['organizer'] = organizer
 
-        # Add more fields as needed (examples)
         # Ticket info
         ticket_info = response.css('div.tribe-events-event-cost ::text').get()
         if ticket_info:
@@ -210,5 +254,5 @@ class WordPressEventsCalendarParser(BaseEventParser):
         if categories:
             details['categories'] = categories
 
+        self.logger.debug(f"Parsed event details: {details}")
         return details
-

@@ -1,18 +1,15 @@
 {
   "newcanaan": [
     {
-      "url": "https://www.newcanaanlibrary.org/events/upcoming",
-      "platform": "drupal",
-      "event_selector": "article.event-card",
-      "name": "New Canaan Library"
-    }
-  ],
-  "darien": [
-    {
-      "url": "https://www.darienlibrary.org/events/upcoming",
-      "platform": "drupal",
-      "event_selector": "article.event-card",
-      "name": "Darien Library"
+      "url": "https://www.stmarksnewcanaan.org/upcoming-events/",
+      "platform": "wordpress",
+      "event_selector": ".tribe-common",
+      "name": "St. Marks New Canaan",
+      "address": "111 Oenoke Ridge, New Canaan, CT 06840",
+      "geocode": {
+        "latitude": 41.1526638,
+        "longitude": -73.4981318
+      }
     }
   ]
 }
