@@ -2,6 +2,10 @@ from .base import BaseEventParser
 
 class LibraryEventsParser(BaseEventParser):
     def parse_events(self, response):
+        """
+        Parse event listings from a library events page, extracting key event information
+        and standardizing datetime using the base parser's parse_datetime method.
+        """
         events = []
         # Save the HTML for inspection
         with open('library_debug.html', 'w', encoding='utf-8') as f:
@@ -32,18 +36,60 @@ class LibraryEventsParser(BaseEventParser):
             self.logger.info("Available classes on page: %s", 
                            set(response.css('*::attr(class)').getall()))
             return events
-            
+        
+        # Define selectors for title, date, and time
+        title_selectors = [
+            'h3::text',
+            '.event-title::text',
+            '.title::text'
+        ]
+        date_selectors = [
+            '.event-date::text',
+            '.date::text',
+            '.event-datetime::text'  # For cases where date and time are combined
+        ]
+        time_selectors = [
+            '.event-time::text',
+            '.time::text'
+        ]
+        
         for event in event_containers:
             try:
                 # Extract title
-                title = (event.css('h3::text').get() or
-                         event.css('.event-title::text').get() or
-                         event.css('.title::text').get())
+                title = None
+                for selector in title_selectors:
+                    title = event.css(selector).get()
+                    if title:
+                        break
+                if not title:
+                    self.logger.warning("Skipping event: No title found")
+                    continue
                 
-                # Extract date
-                date = (event.css('.event-date::text').get() or
-                        event.css('.date::text').get() or
-                        event.css('.time::text').get())
+                # Extract date string
+                date_str = None
+                for selector in date_selectors:
+                    date_str = event.css(selector).get()
+                    if date_str:
+                        break
+                if not date_str:
+                    self.logger.warning(f"Skipping event '{title}': No date found")
+                    continue
+                
+                # Extract time string (optional)
+                time_str = None
+                for selector in time_selectors:
+                    time_str = event.css(selector).get()
+                    if time_str:
+                        break
+                
+                # Standardize datetime using parse_datetime
+                event_datetime = self.parse_datetime(date_str, time_str)
+                if not event_datetime:
+                    self.logger.warning(
+                        f"Skipping event '{title}': Failed to parse datetime from "
+                        f"'{date_str}' and '{time_str}'"
+                    )
+                    continue
                 
                 # Extract description container
                 description_container = event.css('.event-description') or event.css('.description')
@@ -59,15 +105,19 @@ class LibraryEventsParser(BaseEventParser):
                 # Extract URL
                 url = event.css('a::attr(href)').get()
                 
-                if title:  # Only add event if we at least found a title
-                    events.append({
-                        'title': title,
-                        'schedule': date,
-                        'description': description_text,
-                        'url': url,
-                        'links': links
-                    })
-                    
+                # Build event data dictionary with standardized event_datetime
+                event_data = {
+                    'title': title,
+                    'event_datetime': event_datetime,
+                    'description': description_text,
+                    'url': url,
+                    'links': links
+                }
+                
+                # Add event to list
+                events.append(event_data)
+                self.logger.info(f"Extracted event: {title}")
+                
             except Exception as e:
                 self.logger.error(f"Error parsing event: {str(e)}")
                 continue
