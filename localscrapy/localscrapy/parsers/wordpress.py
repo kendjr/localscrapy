@@ -59,17 +59,26 @@ class WordPressEventsCalendarParser(BaseEventParser):
                         self.logger.warning(f"Offers is not a dict in script {idx}, item {i}: {offers}")
                         offers = {}
 
-                    events.append({
-                        'title': event.get("name"),
-                        'schedule': f"{event.get('startDate')} - {event.get('endDate')}",
-                        'venue': {
-                            'name': location.get("name"),
-                            'address': address.get("streetAddress"),
-                        },
-                        'cost': offers.get("price"),
-                        'description': event.get("description"),
-                        'url': event.get("url")
-                    })
+                    # Parse startDate into event_datetime using parse_datetime from base parser
+                    start_date = event.get('startDate')
+                    self.logger.debug(f"Attempting to parse startDate: {start_date}")
+                    event_datetime = self.parse_datetime(start_date)
+                    if event_datetime:
+                        events.append({
+                            'title': event.get("name"),
+                            'event_datetime': event_datetime,
+                            'venue': {
+                                'name': location.get("name"),
+                                'address': address.get("streetAddress"),
+                            },
+                            'cost': offers.get("price"),
+                            'description': event.get("description"),
+                            'url': event.get("url")
+                        })
+                    else:
+                        self.logger.warning(f"Failed to parse startDate for event: {event.get('name')} - startDate was: {start_date}")
+
+
                 
                 if events:
                     self.logger.info(f"Successfully parsed {len(events)} events using JSON-LD")
@@ -166,6 +175,12 @@ class WordPressEventsCalendarParser(BaseEventParser):
                         schedule = ' '.join([s.strip() for s in schedule_parts if s.strip()])
                         break
                 
+                # Parse schedule into event_datetime using parse_datetime from base parser
+                event_datetime = self.parse_datetime(schedule) if schedule else None
+                if not event_datetime:
+                    self.logger.warning(f"Failed to parse schedule for event: {title}")
+                    continue
+
                 # Extract venue name (single value)
                 venue_name = None
                 for selector in venue_name_selectors:
@@ -204,11 +219,11 @@ class WordPressEventsCalendarParser(BaseEventParser):
                         break
 
                 # Debug log extracted data
-                self.logger.debug(f"Extracted Event: Title: {title}, Schedule: {schedule}, Venue: {venue_name}, URL: {url}")
+                self.logger.debug(f"Extracted Event: Title: {title}, Datetime: {event_datetime}, Venue: {venue_name}, URL: {url}")
 
                 events.append({
                     'title': title,
-                    'schedule': schedule,
+                    'event_datetime': event_datetime,
                     'venue': {
                         'name': venue_name,
                         'address': venue_address
@@ -233,8 +248,10 @@ class WordPressEventsCalendarParser(BaseEventParser):
         
         # Extract full description and links from the description container
         description_selector = 'div.tribe-events-single-event-description'
-        #description = description_container.css('::text').getall()
-        #details['full_description'] = ' '.join([d.strip() for d in description if d.strip()])
+        # Note: The original code had a commented-out line for description extraction.
+        # If needed, you can uncomment and adjust it.
+        # description = description_container.css('::text').getall()
+        # details['full_description'] = ' '.join([d.strip() for d in description if d.strip()])
 
         # Extract all links within the description
         details['links'] = self.extract_links(response, description_selector)

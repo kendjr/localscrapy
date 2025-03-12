@@ -1,6 +1,17 @@
 {
   "newcanaan": [
     {
+      "url": "https://www.newcanaanlibrary.org/events/upcoming",
+      "platform": "drupal",
+      "event_selector": "article.event-card",
+      "name": "New Canaan Library",
+      "address": "151 Main St, New Canaan, CT 06840",
+      "geocode": {
+        "latitude": 41.1451692,
+        "longitude": -73.49227945342106
+      }
+    },
+    {
       "url": "https://www.stmarksnewcanaan.org/upcoming-events/",
       "platform": "wordpress",
       "event_selector": ".tribe-common",

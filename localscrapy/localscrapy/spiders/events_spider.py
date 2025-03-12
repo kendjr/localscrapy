@@ -4,12 +4,11 @@ from pathlib import Path
 import os
 import gzip
 import brotli
+import hashlib
 from scrapy import Spider
 from scrapy.exceptions import CloseSpider
-from ..utils.sqs_sender import send_to_sqs, get_secret
 from datetime import datetime
-from pathlib import Path
-import os
+from ..utils.sqs_sender import send_to_sqs, get_secret
 from ..parsers import (
     WordPressEventsCalendarParser,
     LibraryEventsParser,
@@ -57,7 +56,7 @@ class EventSpider(Spider):
 
         # Retrieve the secret string from AWS Secrets Manager
         try:
-            self.secret_string = get_secret()  
+            self.secret_string = get_secret()
             self.logger.info("Retrieved secret string")
         except Exception as e:
             raise CloseSpider(f"Failed to retrieve secret string from Secrets Manager: {e}")
@@ -117,6 +116,29 @@ class EventSpider(Spider):
                     dont_filter=True,
                 )
 
+    def prepare_event_for_sqs(self, event):
+        self.logger.debug(f"Processing event: {event}")
+        """Prepare the event dictionary with event_key, details_hash, and last_scraped."""
+        # Create event_key
+        venue_name = (event.get('venue', {}).get('name') or '').lower().strip()
+        title = (event.get('title') or '').lower().strip()  
+        event_datetime = event.get('event_datetime', '')
+        event_key = f"{title}|{event_datetime}|{venue_name}"
+
+        # Create details_hash
+        details_str = json.dumps(event, sort_keys=True)
+        details_hash = hashlib.md5(details_str.encode()).hexdigest()
+
+        # Add last_scraped
+        last_scraped = datetime.utcnow().isoformat() + "Z"
+
+        # Update event with new fields
+        event['event_key'] = event_key
+        event['details_hash'] = details_hash
+        event['last_scraped'] = last_scraped
+
+        return event
+
     def parse(self, response):
         source = response.meta['source']
         hub_name = response.meta['hub']
@@ -149,6 +171,7 @@ class EventSpider(Spider):
                     )
                 else:
                     self.logger.warning(f"No URL found for event: {event.get('title', 'unknown')}")
+                    event = self.prepare_event_for_sqs(event)
                     message_body = {
                         'hub': hub_name,
                         'source': source_name,
@@ -176,11 +199,8 @@ class EventSpider(Spider):
             self.logger.error(f"Error parsing event details for {event.get('url')}: {str(e)}")
             event['details_fetched'] = False
 
-        # Log the presence of the links field
-        if 'links' in event:
-            self.logger.info(f"Event {event.get('title', 'unknown')} has {len(event['links'])} links")
-        else:
-            self.logger.info(f"Event {event.get('title', 'unknown')} has no links")
+        # Prepare event for SQS
+        event = self.prepare_event_for_sqs(event)
 
         # Send the updated event to SQS
         message_body = {
@@ -204,11 +224,8 @@ class EventSpider(Spider):
         else:
             self.logger.error(f"Failed to fetch event page {request.url}: {failure.value}")
 
-        # Log the presence of the links field
-        if 'links' in event:
-            self.logger.info(f"Event {event.get('title', 'unknown')} has {len(event['links'])} links (sent due to error)")
-        else:
-            self.logger.info(f"Event {event.get('title', 'unknown')} has no links (sent due to error)")
+        # Prepare event for SQS
+        event = self.prepare_event_for_sqs(event)
 
         # Send the basic event data to SQS
         message_body = {

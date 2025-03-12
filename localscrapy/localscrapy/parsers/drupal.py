@@ -2,12 +2,17 @@ from .base import BaseEventParser
 
 class DrupalEventsParser(BaseEventParser):
     def parse_events(self, response):
-        # This method remains unchanged as per the query
+        """
+        Parse event listings from a Drupal events page, extracting key event information
+        and standardizing datetime using the base parser's parse_datetime method.
+        """
         events = []
         self.logger.info("Attempting to parse Drupal events")
         
+        # Log a snippet of the response for debugging
         self.logger.debug(f"Response body: {response.text[:500]}")
         
+        # List of possible CSS selectors for event containers
         selectors = [
             'article.event-card',
             # 'div.views-row',
@@ -16,6 +21,7 @@ class DrupalEventsParser(BaseEventParser):
             # '.calendar-event'
         ]
         
+        # Try each selector until events are found
         event_containers = None
         for selector in selectors:
             event_containers = response.css(selector)
@@ -27,31 +33,49 @@ class DrupalEventsParser(BaseEventParser):
             self.logger.info("No events found with the given selectors")
             return events
         
+        # Process each event container
         for event in event_containers:
             try:
+                # Extract raw fields
                 title = event.css('h3.lc-event__title a::text').get()
                 month = event.css('span.lc-date-icon__item--month::text').get()
                 day = event.css('span.lc-date-icon__item--day::text').get()
                 year = event.css('span.lc-date-icon__item--year::text').get()
-                date = f"{month} {day}, {year}" if month and day and year else None
                 time = event.css('div.lc-event-info-item--time::text').get()
                 categories = event.css('div.lc-event-info__item--categories::text').get()
                 registration_status = event.css('div.lc-registration-label::text').get()
                 url = event.css('a.lc-event__link::attr(href)').get()
+                
+                # Make URL absolute if relative
                 if url and not url.startswith('http'):
                     url = response.urljoin(url)
                 
+                # Create date string if all components are present
+                date_str = f"{month} {day}, {year}" if month and day and year else None
+                time_str = time.strip() if time else None
+                
+                # Standardize datetime using base parser's parse_datetime method
+                event_datetime = self.parse_datetime(date_str, time_str)
+                if not event_datetime:
+                    self.logger.warning(
+                        f"Skipping event '{title}': Failed to parse datetime from "
+                        f"'{date_str}' and '{time_str}'"
+                    )
+                    continue
+                
+                # Build event data dictionary with standardized event_datetime
                 event_data = {
                     'title': title.strip() if title else None,
-                    'date': date,
-                    'time': time.strip() if time else None,
+                    'event_datetime': event_datetime,
                     'categories': categories.strip() if categories else None,
                     'registration_status': registration_status.strip() if registration_status else None,
                     'url': url
                 }
                 
+                # Filter out None values
                 event_data = {k: v for k, v in event_data.items() if v is not None}
                 
+                # Add event to list if data exists
                 if event_data:
                     events.append(event_data)
                     self.logger.info(f"Extracted event: {event_data['title']}")
@@ -64,18 +88,21 @@ class DrupalEventsParser(BaseEventParser):
         return events
 
     def parse_event_details(self, response):
-        """Extract additional details from an individual event page, including links from the description."""
+        """
+        Extract additional details from an individual event page, including links from
+        the description. No date-related parsing is performed here.
+        """
         details = {}
 
-        # Define selectors for description containers (selecting <p> elements, not just text)
+        # Define selectors for description containers
         description_element_selectors = [
-            'section.lc-event__content div.field-container p',  # Darien Library
-            'div.field-container p',  # General Drupal field container
-            'div.event-description p',  # Alternative event description
-            'div.node__content p',  # Common Drupal content area
+            'section.lc-event__content div.field-container p',
+            'div.field-container p',
+            'div.event-description p',
+            'div.node__content p',
         ]
 
-        # Define selectors for location (elements, not just text, for consistency)
+        # Define selectors for location
         location_selectors = [
             'div.lc-event-location-address p',
             'div.lc-event-location-address div.lc-address-line',
@@ -83,7 +110,7 @@ class DrupalEventsParser(BaseEventParser):
             'address',
         ]
 
-        # Define selectors for contact (elements, not just text, for consistency)
+        # Define selectors for contact
         contact_selectors = [
             'div.lc-event-address-container div.lc-event-contact-name',
             'div.lc-event-location__phone a',
@@ -96,15 +123,13 @@ class DrupalEventsParser(BaseEventParser):
             for selector in selectors:
                 elements = response.css(selector)
                 if elements:
-                    # Extract all text within the elements, including text in child elements like <a>
+                    # Extract all text within elements, including child elements
                     texts = []
                     for elem in elements:
-                        # Use xpath to get all text nodes within each element
                         texts.extend(elem.xpath('.//text()').getall())
                     text = ' '.join([t.strip() for t in texts if t.strip()])
-                    if text:  # Only proceed if we have text content
+                    if text:
                         if extract_links:
-                            # Use the base class's extract_links method
                             links = self.extract_links(response, selector)
                             return text, links
                         return text
@@ -126,8 +151,7 @@ class DrupalEventsParser(BaseEventParser):
         if contact:
             details['contact'] = contact
 
-        # Log the parsed details for debugging
+        # Log parsed details
         self.logger.debug(f"Parsed event details: {details}")
 
-        # Return details, no need to filter None here since we only add non-None values
         return details
